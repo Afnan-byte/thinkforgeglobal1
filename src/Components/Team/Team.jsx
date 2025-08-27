@@ -39,13 +39,14 @@ const teamMembers = [
     name: "Ullas Raj",
     title: "Senior Developer",
     image: ullas,
-    linkedin: "linkedin.com/in/ullas-raj-4a5808169",
+    linkedin: "https://www.linkedin.com/in/ullas-raj-4a5808169",
+    
   },
   {
     name: "Sadasivan K S ",
-    title: "UX Strategist & Product Designer",
+    title: "Full Stack Developer",
     image: sadasivan,
-    linkedin: "linkedin.com/in/sadasivan-ks",
+    linkedin: "https://www.linkedin.com/in/sadasivan-ks",
   },
    
    {
@@ -83,7 +84,7 @@ const teamMembers = [
     name: "Mohammed Asif",
     title: "Software Developer Trainee",
     image: asif,
-    linkedin: "http://linkedin.com/in/asifap",
+    linkedin: "https://www.linkedin.com/in/asifap",
   },
 ];
 
