@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import hero from "../Assets/hero2.webp";
-import InteractiveGridPattern from "../IntractiveGrid/IntractiveGrid";
+import InteractiveGridPattern from "../intractiveGrid/intractiveGrid";
 
 export default function ConnectSection({ variant = "default" }) {
   const [showForm, setShowForm] = useState(false);
