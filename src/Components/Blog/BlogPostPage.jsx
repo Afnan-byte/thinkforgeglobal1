@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft } from 'lucide-react';
-import InteractiveGridPattern from '../IntractiveGrid/IntractiveGrid';
+import InteractiveGridPattern from '../intractiveGrid/intractiveGrid';
 import { fetchBlogBySlug } from '@/utils/blogService';
-import Loader from '../Loader/Loader';
+import Loader from '../loader/loader';
 
 export default function BlogPostPage() {
   const { slug } = useParams();
@@ -15,8 +15,8 @@ export default function BlogPostPage() {
     async function loadPost() {
       try {
         const data = await fetchBlogBySlug(slug);
-        console.log("sadasdaa",data)
         setPost(data)
+        console.log("Data",data)
       } catch (err) {
         console.error("Error loading post:", err);
       } finally {

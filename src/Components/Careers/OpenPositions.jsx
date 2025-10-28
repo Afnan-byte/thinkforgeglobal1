@@ -1,5 +1,5 @@
 import React from "react";
-import InteractiveGridPattern from "../IntractiveGrid/IntractiveGrid";
+import InteractiveGridPattern from "../intractiveGrid/intractiveGrid";
 
 
 const jobPositions = [

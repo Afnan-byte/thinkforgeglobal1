@@ -1,9 +1,9 @@
 import React from 'react';
-import Hero from '../Components/Hero/Hero';
-import About from '../Components/About/About';
-import OurServices from '../Components/Service/Service';
-import Team from '../Components/Team/Team';
-import ConnectSection from '../Components/Connect/Connect';
+import Hero from '../components/hero/hero';
+import About from '../components/about/about';
+import OurServices from '../components/service/service';
+import Team from '../components/team/team';
+import ConnectSection from '../components/connect/connect';
 
 
 

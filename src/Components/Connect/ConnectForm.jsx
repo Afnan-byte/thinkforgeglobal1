@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import InputField from "../ui/InputField";
+import InputField from "../ui/inputField";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({

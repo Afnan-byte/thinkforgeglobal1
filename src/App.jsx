@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import Navbar from './Components/Navbar/Navbar';
-import Footer from './Components/Footer/Footer';
-import Loader from './Components/Loader/Loader';
+import Footer from './components/footer/footer';
+import Loader from './components/loader/loader';
 import { Routes,Route } from 'react-router-dom';
-import HomePage from './pages/HomePages';
-import CareersPage from './pages/CareersPage';
-import BlogPage from './pages/BlogPage';
-import BlogPostPage from './Components/Blog/BlogPostPage';
-import ConnectPage from './pages/ConnectPage';
+import HomePage from './pages/homePages';
+import CareersPage from './pages/careersPage';
+import BlogPage from './pages/blogPage';
+import BlogPostPage from './components/blog/blogPostPage';
+import ConnectPage from './pages/connectPage';
+import Navbar from './components/navbar/navbar';
 function App() {
   const [loading, setLoading] = useState(true);
 

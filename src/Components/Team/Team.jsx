@@ -1,6 +1,6 @@
 import React from "react";
 import { FaLinkedinIn } from "react-icons/fa";
-import InteractiveGridPattern from "../IntractiveGrid/IntractiveGrid";
+import InteractiveGridPattern from "../intractiveGrid/intractiveGrid";
 
 import shafas from "../Assets/shafas.webp";
 import afnan from "../Assets/afnan (2).webp";

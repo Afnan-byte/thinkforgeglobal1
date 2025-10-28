@@ -1,5 +1,5 @@
-import ConnectSection from "@/Components/Connect/Connect";
-import ContactForm from "@/Components/Connect/ConnectForm";
+import ConnectSection from "@/components/connect/connect";
+import ContactForm from "@/components/connect/connectForm";
 import React from "react";
 
 function ConnectPage() {
