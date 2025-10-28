@@ -1,7 +1,7 @@
 import React from 'react';
-import CareersHero from '../Components/Careers/CareersHero';
-import OpenPositions from '../Components/Careers/OpenPositions';
-import ConnectSection from '../Components/Connect/Connect';
+import CareersHero from '../components/Careers/CareersHero';
+import OpenPositions from '../components/Careers/OpenPositions';
+import ConnectSection from '../components/Connect/Connect';
 
 export default function CareersPage() {
   return (
