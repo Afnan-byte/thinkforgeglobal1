@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import BlogCarousel from "@/components/Blog/BlogCarousel";
-import BlogCard from "@/components/Blog/BlogCard";
-import ConnectSection from "@/components/Connect/Connect";
+import BlogCarousel from "@/components/blog/BlogCarousel";
+import BlogCard from "@/components/blog/BlogCard";
+import ConnectSection from "@/components/connect/Connect";
 import { fetchAllBlogs } from "@/utils/blogService";
-import Loader from "@/components/Loader/Loader";
+import Loader from "@/components/loader/Loader";
 
 
 function BlogPage() {

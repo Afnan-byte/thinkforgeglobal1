@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft } from 'lucide-react';
 import InteractiveGridPattern from '../IntractiveGrid/IntractiveGrid';
 import { fetchBlogBySlug } from '@/utils/blogService';
-import Loader from '../Loader/Loader';
+import Loader from '../loader/Loader';
 
 export default function BlogPostPage() {
   const { slug } = useParams();
