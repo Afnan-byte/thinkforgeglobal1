@@ -1,6 +1,6 @@
-import { Badge } from "../ui/badge";
-import { Card, CardContent } from "../ui/card";
-import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
+import { Badge } from "../ui/Badge";
+import { Card, CardContent } from "../ui/Card";
+import { Carousel, CarouselContent, CarouselItem } from "../ui/Carousel";
 
 
 

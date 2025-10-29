@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 import InteractiveGridPattern from '../IntractiveGrid/IntractiveGrid';
 import { fetchBlogBySlug } from '@/utils/blogService';
 import Loader from '../Loader/Loader';
-import { Badge } from '../ui/badge';
+import { Badge } from '../ui/Badge';
 
 export default function BlogPostPage() {
   const { slug } = useParams();
@@ -15,7 +15,6 @@ export default function BlogPostPage() {
     async function loadPost() {
       try {
         const data = await fetchBlogBySlug(slug);
-        console.log("sadasdaa",data)
         setPost(data)
       } catch (err) {
         console.error("Error loading post:", err);
