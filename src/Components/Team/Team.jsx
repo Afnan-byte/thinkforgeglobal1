@@ -142,6 +142,7 @@ export default function Team() {
                 src={member.image}
                 alt={member.name}
                 className="w-full h-60 object-cover object-top"
+                loading="lazy"
               />
               <div className="p-4 text-center pb-12 space-y-1">
                 <h3 className="text-lg font-semibold">{member.name}</h3>
