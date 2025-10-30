@@ -23,10 +23,10 @@ export default {
       },
       fontFamily: {
         'cal-sans': ['"Cal Sans"', 'sans-serif'],
-        'sh-ad-grotesk': ['"Sh Ad Grotesk"', 'sans-serif'],
-        sfpro: ['"SF Pro Display"', 'sans-serif'],
-        awesome: ['"Awesome Serif"', 'serif'],
-        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+        // 'sh-ad-grotesk': ['"Sh Ad Grotesk"', 'sans-serif'],
+        // sfpro: ['"SF Pro Display"', 'sans-serif'],
+        // awesome: ['"Awesome Serif"', 'serif'],
+        // sans: ['Inter', 'ui-sans-serif', 'system-ui'],
       
       },
     },
