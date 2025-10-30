@@ -40,11 +40,7 @@ export default function Footer() {
                 <FaMapMarkerAlt className="mr-2 text-red-500" /> Address
               </h3>
               <p className="text-gray-700 text-sm leading-relaxed max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
-                2nd Floor, Sahara Center Complex, Calicut Road,
-                <br />
-                Opp. Polytech Quarters, Pallippuram, Perinthalmanna,
-                <br />
-                Angadipuram, Kerala 679321
+                Second Floor, Ayisha Complex, <br/> Perinthalmanna, Kerala, <br/> India 679322
               </p>
             </div>
 
@@ -52,7 +48,7 @@ export default function Footer() {
               <iframe
                 title="Google Map"
                 className="w-full h-full"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.632228830118!2d76.2201979!3d10.990262200000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7cb0179a61e63%3A0x86ab8a604297184b!2sSahara%20shopping%20complex!5e0!3m2!1sen!2sin!4v1729860000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d244.80144487937253!2d76.21926463627273!3d10.976720148350356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7cd5a48d332c9%3A0x53c4e6fc539a98d!2sThink%20Forge%20Global%20LLP!5e0!3m2!1sen!2sin!4v1759155248199!5m2!1sen!2sin"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
