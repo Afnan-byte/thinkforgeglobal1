@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
-import BlogCarousel from "@/Components/Blog/BlogCarousel";
-import BlogCard from "@/Components/Blog/BlogCard";
-import ConnectSection from "@/Components/Connect/Connect";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { fetchAllBlogs } from "@/utils/blogService";
 import Loader from "@/Components/Loader/Loader";
 
+
+const BlogCarousel = lazy(() => import("@/Components/Blog/BlogCarousel"));
+const BlogCard = lazy(() => import("@/Components/Blog/BlogCard"));
+const ConnectSection = lazy(() => import("@/Components/Connect/Connect"));
 
 function BlogPage() {
   const [posts, setPosts] = useState([]);
@@ -14,7 +15,6 @@ function BlogPage() {
     async function loadBlogs() {
       try {
         const data = await fetchAllBlogs();
-        console.log("asduhasdui",data)
         setPosts(data);
       } catch (error) {
         console.error("Error fetching blogs:", error);
@@ -25,8 +25,7 @@ function BlogPage() {
     loadBlogs();
   }, []);
 
-
-   if (loading) {
+  if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
         <Loader />
@@ -35,12 +34,21 @@ function BlogPage() {
   }
 
   const carouselPosts = posts.slice(0, 3);
-  const gridPosts = posts
+  const gridPosts = posts;
+
   return (
     <>
-      <BlogCarousel posts={carouselPosts} />
-      <BlogCard content={gridPosts} />
-      <ConnectSection  variant="default" />
+      <Suspense fallback={<Loader />}>
+        <BlogCarousel posts={carouselPosts} />
+      </Suspense>
+
+      <Suspense fallback={<Loader />}>
+        <BlogCard content={gridPosts} />
+      </Suspense>
+
+      <Suspense fallback={<Loader />}>
+        <ConnectSection variant="default" />
+      </Suspense>
     </>
   );
 }

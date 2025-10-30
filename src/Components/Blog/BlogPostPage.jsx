@@ -99,7 +99,7 @@ export default function BlogPostPage() {
           {post.subtitle1 && (
             <>
               <h2 className="font-bold text-2xl py-4">{post.subtitle1}</h2>
-              <p>{post.subcontent1}</p>
+              <p className='pb-4'>{post.subcontent1}</p>
             </>
           )}
         </div>

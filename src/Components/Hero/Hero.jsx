@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import hero from "../Assets/hero2.webp";
+import hero from "../Assets/hero21.webp";
 import InteractiveGridPattern from "../IntractiveGrid/IntractiveGrid";
 
 export default function Hero() {

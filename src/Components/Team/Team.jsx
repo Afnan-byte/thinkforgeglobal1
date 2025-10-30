@@ -3,7 +3,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import InteractiveGridPattern from "../IntractiveGrid/IntractiveGrid";
 
 import shafas from "../Assets/shafas.webp";
-import afnan from "../Assets/afnan (2).webp";
+import afnan from "../Assets/afnan.webp";
 import praveen from "../Assets/praveen.webp";
 import goutham from "../Assets/goutham.webp";
 import nijith from "../Assets/nijith.webp";
