@@ -16,6 +16,7 @@ export default function CareersHero() {
           src={heroImage}
           alt="A hiker standing on a natural rock bridge"
           className="w-full h-auto object-cover"
+          loading="lazy"
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="relative inline-block p-2 sm:p-4">

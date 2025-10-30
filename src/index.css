@@ -4,23 +4,23 @@
 @tailwind utilities;
 
 /* src/index.css */
-@font-face {
+/* @font-face {
   font-family: 'Sh Ad Grotesk';
   src: url('./assets/fonts/ShAdGrotesk-Medium.woff2') format('woff2'),
        url('./assets/fonts/ShAdGrotesk-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
-}
+} */
 
 body {
   font-family: 'Sh Ad Grotesk', sans-serif, 'Inter';
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Awesome Serif';
   src: url('/fonts/AwesomeSerif-Italic-VAR.woff2') format('woff2');
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
-}
+} */
 

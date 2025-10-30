@@ -15,6 +15,7 @@ export function BlogCardItem({ slug, imageUrl, title, date, categories }) {
           src={imageUrl}
           alt={title}
           className="w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
 
