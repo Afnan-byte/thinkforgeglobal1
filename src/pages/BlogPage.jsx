@@ -1,6 +1,6 @@
 import React, { useEffect, useState, lazy, Suspense } from "react";
 import { fetchAllBlogs } from "@/utils/blogService";
-import { Skeleton } from "@/components/ui/Skeleton";
+import { Skeleton } from "@/Components/ui/Skeleton";
 import Loader from "@/Components/Loader/Loader";
 
 const BlogCarousel = lazy(() => import("@/Components/Blog/BlogCarousel"));
