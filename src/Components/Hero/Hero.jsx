@@ -37,6 +37,8 @@ export default function Hero() {
           src={hero}
           alt="Hero Graphic"
           className="w-full object-cover max-h-[25vh] sm:max-h-[30vh] md:max-h-[40vh]"
+          fetchpriority="high"
+          loading="eager"
         />
       </div>
 

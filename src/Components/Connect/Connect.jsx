@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import hero from "../Assets/hero21.webp";
-import InteractiveGridPattern from "../IntractiveGrid/IntractiveGrid";
+const InteractiveGridPattern = React.lazy(() =>
+  import("../IntractiveGrid/IntractiveGrid")
+);
 
 export default function ConnectSection({ variant = "default" }) {
   const [showForm, setShowForm] = useState(false);
@@ -43,8 +45,12 @@ export default function ConnectSection({ variant = "default" }) {
         <img
           src={hero}
           alt="Background"
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
           className="absolute inset-0 w-full h-full object-cover object-center z-20 pointer-events-none"
         />
+
         <div className="absolute top-[15%] md:top-[10%] left-1/2 z-30 transform -translate-x-1/2  text-center px-6 w-full max-w-xl space-y-10">
           {variant === "default" ? (
             <>

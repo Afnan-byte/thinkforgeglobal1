@@ -1,26 +1,28 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cal+Sans&family=Moderustic:wght@300..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* src/index.css */
-/* @font-face {
-  font-family: 'Sh Ad Grotesk';
-  src: url('./assets/fonts/ShAdGrotesk-Medium.woff2') format('woff2'),
-       url('./assets/fonts/ShAdGrotesk-Medium.woff') format('woff');
-  font-weight: 500;
+@font-face {
+  font-family: "Cal Sans";
+  src: url("/public/Fonts/Cal\ Sans\ SemiBold.woff2") format("woff2");
+  font-weight: 600;
   font-style: normal;
-} */
-
-body {
-  font-family: 'Sh Ad Grotesk', sans-serif, 'Inter';
+  font-display: swap;
 }
 
-/* @font-face {
-  font-family: 'Awesome Serif';
-  src: url('/fonts/AwesomeSerif-Italic-VAR.woff2') format('woff2');
-  font-weight: 100 900;
-  font-style: italic;
-  font-display: swap;
-} */
+body {
+
+  font-family: "Cal Sans", "Sh Ad Grotesk", "Inter", sans-serif;
+  background-color: #fff;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 

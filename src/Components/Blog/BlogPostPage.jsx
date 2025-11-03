@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
-import InteractiveGridPattern from '../IntractiveGrid/IntractiveGrid';
-import { fetchBlogBySlug } from '@/utils/blogService';
-import Loader from '../Loader/Loader';
-import { Badge } from '../ui/Badge';
+import React, { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { fetchBlogBySlug } from "@/utils/blogService";
+import Loader from "../Loader/Loader";
+import { Badge } from "../ui/Badge";
 
 export default function BlogPostPage() {
   const { slug } = useParams();
@@ -17,7 +16,7 @@ export default function BlogPostPage() {
         const data = await fetchBlogBySlug(slug);
         setPost(data);
       } catch (err) {
-        console.error('Error loading post:', err);
+        console.error("Error loading post:", err);
       } finally {
         setLoading(false);
       }
@@ -44,22 +43,21 @@ export default function BlogPostPage() {
 
   return (
     <div>
-      {/* Black Section */}
-      <div className="bg-black text-white pt-40 pb-0">
+      {/* 🖤 Hero Section */}
+      <section className="bg-black text-white pt-40 pb-0">
         <div className="max-w-6xl mx-auto px-6">
           <Link
             to="/blog"
-            className="inline-flex items-center text-gray-400 hover:text-white transition-colors mb-8"
+            className="inline-flex items-center text-gray-400 hover:text-white mb-8"
           >
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Blog
+            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
           </Link>
 
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
             {post.title}
           </h1>
 
-          <div className="flex gap-2 my-4 flex-wrap py-4">
+          <div className="flex gap-2 my-4 flex-wrap">
             {post.categories.map((category, index) => (
               <Badge
                 key={index}
@@ -71,39 +69,41 @@ export default function BlogPostPage() {
             ))}
           </div>
 
-          <div className="hidden md:block w-full aspect-video rounded-lg overflow-hidden mt-12 relative z-10 mb-[-180px]">
+          {/* Large Image (Desktop) */}
+          <div className="hidden md:block w-full aspect-video rounded-lg overflow-hidden mt-12 mb-[-180px] relative z-10">
             <img
               src={post.imageUrl}
               alt={post.title}
               className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
-      </div>
+      </section>
 
-
-      <div className="bg-white text-black pt-4 md:pt-48 relative">
-   
-
+      {/* 📝 Blog Content Section */}
+      <section className="bg-white text-black pt-4 md:pt-48 relative">
+        {/* Image for Mobile */}
         <div className="block md:hidden max-w-6xl mx-auto px-6 mb-4">
           <img
             src={post.imageUrl}
             alt={post.title}
-            className="w-full rounded-lg shadow-lg z-10"
+            className="w-full rounded-lg shadow-lg"
           />
         </div>
 
-        <div className="prose prose-lg lg:prose-xl max-w-6xl mx-auto px-6 relative z-10">
+        <article className="prose prose-lg lg:prose-xl max-w-6xl mx-auto px-6 relative z-10">
           <p>{post.introduction}</p>
 
           {post.subtitle1 && (
             <>
               <h2 className="font-bold text-2xl py-4">{post.subtitle1}</h2>
-              <p className='pb-4'>{post.subcontent1}</p>
+              <p className="pb-4">{post.subcontent1}</p>
             </>
           )}
-        </div>
-      </div>
+        </article>
+      </section>
     </div>
   );
 }
