@@ -1,12 +1,21 @@
-import path from "path" 
-import react from "@vitejs/plugin-react"
-import { defineConfig } from "vite"
+import path from "path";
+import react from "@vitejs/plugin-react";
+import compression from "vite-plugin-compression";
+import { defineConfig } from "vite";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    compression({
+      algorithm: "brotliCompress", 
+      ext: ".br",                  
+      threshold: 10240,            
+      deleteOriginFile: false,     
+    }),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
-})
+});

@@ -5,20 +5,26 @@ import {
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaEnvelope,
+  FaWhatsapp,
 } from "react-icons/fa";
 import logo from "../Assets/footer.webp";
 
 export default function Footer() {
   const socialLinks = [
     {
-      icon: <FaLinkedinIn />,
+      icon: <FaLinkedinIn className="text-white" />,
       url: "https://www.linkedin.com/company/think-forge-global",
       color: "hover:bg-blue-600",
     },
     {
-      icon: <FaInstagram />,
+      icon: <FaInstagram className="text-white"  />,
       url: "https://www.instagram.com/think_forge_global/",
       color: "hover:bg-gradient-to-r from-purple-500 to-pink-500",
+    },
+     {
+      icon: <FaWhatsapp className="text-white" />,
+      url: "https://wa.me/919745004161", 
+      color: "hover:bg-green-500",
     },
   ];
 
@@ -40,7 +46,10 @@ export default function Footer() {
                 <FaMapMarkerAlt className="mr-2 text-red-500" /> Address
               </h3>
               <p className="text-gray-700 text-sm leading-relaxed max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
-                Second Floor, Ayisha Complex, <br/> Perinthalmanna, Kerala, <br/> India 679322
+               Think Forge Global LLP <br />
+                Second Floor, Ayisha Complex, <br />
+                Perinthalmanna, Malappuram, Kerala, <br />
+                India - 679322
               </p>
             </div>
 
@@ -90,7 +99,7 @@ export default function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`p-3 rounded-full border border-gray-300 hover:text-white transition-all ${social.color} hover:border-transparent shadow-sm`}
+                  className={`p-3 rounded-full bg-black border border-white hover:text-white transition-all ${social.color} hover:border-transparent shadow-sm`}
                 >
                   {social.icon}
                 </a>

@@ -7,6 +7,8 @@ const jobPositions = [
     id: "graphic-designer-01",
     title: "Graphic Designer",
     type: "Full Time",
+    experience: "1–2 years",
+    skills: ["Adobe Photoshop", "Illustrator", "Creativity"],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
   },
@@ -14,6 +16,8 @@ const jobPositions = [
     id: "ui-ux-designer-01",
     title: "UI/UX Designer",
     type: "Full Time",
+     experience: "1–2 years",
+    skills: ["Adobe Photoshop", "Illustrator", "Creativity"],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
   },
@@ -21,6 +25,8 @@ const jobPositions = [
     id: "digital-marketer-01",
     title: "Digital Marketer",
     type: "Full Time",
+     experience: "1–2 years",
+    skills: ["Adobe Photoshop", "Illustrator", "Creativity"],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
   },
@@ -28,6 +34,8 @@ const jobPositions = [
     id: "seo-specialist-01",
     title: "SEO Specialist",
     type: "Full Time",
+     experience: "1–2 years",
+    skills: ["Adobe Photoshop", "Illustrator", "Creativity"],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
   },
@@ -35,6 +43,8 @@ const jobPositions = [
     id: "software-trainee-01",
     title: "Software Trainee",
     type: "Full Time",
+     experience: "1–2 years",
+    skills: ["Adobe Photoshop", "Illustrator", "Creativity"],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
   },
@@ -42,6 +52,8 @@ const jobPositions = [
     id: "software-developer-01",
     title: "Software Developer",
     type: "Full Time",
+     experience: "1–2 years",
+    skills: ["Adobe Photoshop", "Illustrator", "Creativity"],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
   },
@@ -75,14 +87,20 @@ export default function OpenPositions() {
                   <span className="bg-[#929292] text-[#FFFFFF] text-xs font-medium font-sh-ad-grotesk px-2.5 py-0.5 rounded-lg">
                     {job.type}
                   </span>
+                   <span className="bg-[#F87171] text-white text-xs font-medium font-sh-ad-grotesk px-2.5 py-0.5 rounded-lg">
+        {job.experience}
+      </span>
                 </div>
+                 <div className="text-sm text-gray-700 mb-8">
+      <strong>Skills:</strong> {job.skills.join(", ")}
+    </div>
               </div>
               <div>
                 <a
                   href={job.applyLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-[#929292] p-2 border border-gray-300 rounded-full hover:bg-gray-100 transition-colors"
+                  className="inline-block text-[#000000] p-2 border-2 border-black rounded-full hover:bg-red-500 transition-colors"
                 >
                   Apply Now
                 </a>

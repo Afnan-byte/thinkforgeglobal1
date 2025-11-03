@@ -6,18 +6,21 @@ export default function CareersHero() {
     <div className="bg-black text-white pt-28">
       <div className="mb-2">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-sh-ad-grotesk max-w-5xl text-center p-2 px-4 mb-4 mx-auto">
-          Here at <span className="text-red-500">Think Forge Global</span> we believe the best ideas are forged together.
-          Join the team and start forging
+          Here at <span className="text-red-500">Think Forge Global</span> we
+          believe the best ideas are forged together. Join the team and start
+          forging
         </h1>
       </div>
 
       <div className="relative max-w-7xl mx-auto">
         <img
           src={heroImage}
-          alt="A hiker standing on a natural rock bridge"
+          alt="Think Forge Global - Career Hero"
           className="w-full h-auto object-cover"
-          loading="lazy"
+          fetchpriority="high"
+          loading="eager"
         />
+
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="relative inline-block p-2 sm:p-4">
             <div className="absolute left-0 top-0 h-full w-6 sm:w-8 md:w-10 border-l-4 sm:border-l-8 border-t-2 sm:border-t-4 border-b-2 sm:border-b-4 border-white"></div>
