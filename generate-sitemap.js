@@ -9,13 +9,9 @@ const sitemapPath = path.resolve("public/sitemap.xml");
 const GOOGLE_SHEET_CSV_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vSfsX1M35N5TpwciUq2onec2hhq4jS3405lkOTLxAIeFOEHPVyc5tM1v8yBAFes4XfLpzeUnLVpVTGY/pub?gid=0&single=true&output=csv";
 
-// Define static routes (anchors optional for internal linking)
+// Define static routes (Removed fragment URLs like /#hero)
 const staticRoutes = [
   "/",
-  "/#hero",
-  "/#about",
-  "/#services",
-  "/#team",
   "/blog",
   "/careers",
   "/connect",
@@ -32,10 +28,31 @@ async function fetchBlogSlugs() {
     rows.forEach((row) => {
       const cols = row.split(",");
       const slug = cols[0]?.trim(); // slug column
-      const date = cols[2] && !isNaN(new Date(cols[2]).getTime())
-        ? new Date(cols[2]).toISOString().split("T")[0]
-        : new Date().toISOString().split("T")[0];
-      if (slug) slugs.push({ slug, date });
+      const dateStr = cols[2]?.trim(); // date column
+      let lastmod;
+
+      if (dateStr) {
+        const parsedDate = new Date(dateStr);
+        const year = parsedDate.getFullYear();
+
+        // Check if date is valid AND the year is reasonable (e.g., after 1990)
+        // This will catch errors like "0202-12-09"
+        if (!isNaN(parsedDate.getTime()) && year > 1990) {
+          lastmod = parsedDate.toISOString();
+        } else {
+          // The date in the sheet is invalid or empty
+          // We'll fall back to today's date to prevent sitemap errors
+          console.warn(
+            `⚠️ Invalid or old date "${dateStr}" for slug "${slug}". Defaulting to today.`
+          );
+          lastmod = new Date().toISOString();
+        }
+      } else {
+        // No date provided, default to today
+        lastmod = new Date().toISOString();
+      }
+
+      if (slug) slugs.push({ slug, date: lastmod });
     });
 
     return slugs;
@@ -50,12 +67,13 @@ async function generateSitemap() {
 
   const blogSlugs = await fetchBlogSlugs();
   const urls = [];
+  const today = new Date().toISOString();
 
   // Add static routes
   staticRoutes.forEach((route) => {
     urls.push({
       loc: `${BASE_URL}${route}`,
-      lastmod: new Date().toISOString(),
+      lastmod: today, // Use consistent ISO string date
       changefreq: "weekly",
       priority: route === "/" ? 1.0 : 0.9,
     });
@@ -65,7 +83,7 @@ async function generateSitemap() {
   blogSlugs.forEach(({ slug, date }) => {
     urls.push({
       loc: `${BASE_URL}/blog/${slug}`,
-      lastmod: date,
+      lastmod: date, // Use the date from the sheet (or fallback)
       changefreq: "daily",
       priority: 0.8,
     });

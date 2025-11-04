@@ -11,7 +11,7 @@ function BlogPage() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // ✅ Fetch with localStorage cache
+  
   useEffect(() => {
     const cacheKey = "blogs_cache_v3";
     const cached = localStorage.getItem(cacheKey);
@@ -52,6 +52,12 @@ function BlogPage() {
 
   return (
     <>
+    <title>Blog | Think Forge</title>
+      <meta
+        name="description"
+        content="Insights from a top software development and AI company in Kerala. Read about AI, IT, and tech trends from our team in Perinthalmanna."
+      />
+      <link rel="canonical" href="https://www.thinkforgeglobal.com/blog" />
     
       <Suspense fallback={<Loader />}>
         <BlogCarousel posts={carouselPosts} />
