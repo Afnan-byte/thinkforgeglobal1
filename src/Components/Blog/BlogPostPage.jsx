@@ -5,7 +5,6 @@ import { fetchBlogBySlug } from "@/utils/blogService";
 import Loader from "../Loader/Loader";
 import { Badge } from "../ui/Badge";
 
-
 export default function BlogPostPage() {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
@@ -57,7 +56,7 @@ export default function BlogPostPage() {
             {post.title}
           </h1>
 
-          <div className="flex gap-2 my-4 flex-wrap">
+          <div className="flex gap-2 my-4 pb-4 flex-wrap">
             {post.categories.map((category, index) => (
               <Badge
                 key={index}
@@ -88,17 +87,15 @@ export default function BlogPostPage() {
           />
         </div>
 
-       <article className="prose prose-lg lg:prose-xl max-w-6xl mx-auto px-6 relative z-10">
-  <div dangerouslySetInnerHTML={{ __html: post.introduction }} />
+        <article className="prose prose-lg lg:prose-xl prose-h3:text-3xl prose-h3:font-bold prose-h3:text-gray-900 max-w-6xl mx-auto px-6 relative z-10">
+          <div dangerouslySetInnerHTML={{ __html: post.introduction }} />
 
-  {post.subtitle1 && (
-    <>
-      <h2 className="font-bold text-2xl py-4">{post.subtitle1}</h2>
-      <div className="pb-4" dangerouslySetInnerHTML={{ __html: post.subcontent1 }} />
-    </>
-  )}
-</article>
-
+          {post.subtitle1 && (
+            <>
+              <div dangerouslySetInnerHTML={{ __html: post.subcontent1 }} />
+            </>
+          )}
+        </article>
       </section>
     </div>
   );
