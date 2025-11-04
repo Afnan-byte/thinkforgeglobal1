@@ -7,9 +7,9 @@ const GOOGLE_SHEET_CSV_URL =
 
 export async function fetchAllBlogs() {
   try {
-    const response = await axios.get(GOOGLE_SHEET_CSV_URL, {
-      responseType: "text", 
-    });
+    const response = await axios.get(`${GOOGLE_SHEET_CSV_URL}&t=${Date.now()}`, {
+  responseType: "text",
+});
     console.log("adasdasd",response)
 
     const parsed = Papa.parse(response.data, {

@@ -43,7 +43,6 @@ export default function BlogPostPage() {
 
   return (
     <div>
-      {/* 🖤 Hero Section */}
       <section className="bg-black text-white pt-40 pb-0">
         <div className="max-w-6xl mx-auto px-6">
           <Link
@@ -57,7 +56,7 @@ export default function BlogPostPage() {
             {post.title}
           </h1>
 
-          <div className="flex gap-2 my-4 flex-wrap">
+          <div className="flex gap-2 my-4 pb-4 flex-wrap">
             {post.categories.map((category, index) => (
               <Badge
                 key={index}
@@ -68,8 +67,6 @@ export default function BlogPostPage() {
               </Badge>
             ))}
           </div>
-
-          {/* Large Image (Desktop) */}
           <div className="hidden md:block w-full aspect-video rounded-lg overflow-hidden mt-12 mb-[-180px] relative z-10">
             <img
               src={post.imageUrl}
@@ -81,10 +78,7 @@ export default function BlogPostPage() {
           </div>
         </div>
       </section>
-
-      {/* 📝 Blog Content Section */}
       <section className="bg-white text-black pt-4 md:pt-48 relative">
-        {/* Image for Mobile */}
         <div className="block md:hidden max-w-6xl mx-auto px-6 mb-4">
           <img
             src={post.imageUrl}
@@ -93,13 +87,12 @@ export default function BlogPostPage() {
           />
         </div>
 
-        <article className="prose prose-lg lg:prose-xl max-w-6xl mx-auto px-6 relative z-10">
-          <p>{post.introduction}</p>
+        <article className="prose prose-lg lg:prose-xl prose-h3:text-3xl prose-h3:font-bold prose-h3:text-gray-900 max-w-6xl mx-auto px-6 relative z-10">
+          <div dangerouslySetInnerHTML={{ __html: post.introduction }} />
 
           {post.subtitle1 && (
             <>
-              <h2 className="font-bold text-2xl py-4">{post.subtitle1}</h2>
-              <p className="pb-4">{post.subcontent1}</p>
+              <div dangerouslySetInnerHTML={{ __html: post.subcontent1 }} />
             </>
           )}
         </article>

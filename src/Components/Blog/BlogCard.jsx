@@ -17,6 +17,12 @@ export function BlogCardItem({ post }) {
     );
   }
 
+  function stripHTML(html) {
+  const temp = document.createElement("div");
+  temp.innerHTML = html;
+  return temp.textContent || temp.innerText || "";
+}
+
   const { slug, imageUrl, title, date, categories, introduction } = post;
 
   return (
@@ -55,7 +61,7 @@ export function BlogCardItem({ post }) {
 
             {introduction && (
               <p className="text-sm text-gray-600 line-clamp-2 mb-3">
-                {introduction}
+                {stripHTML(introduction)}
               </p>
             )}
           </div>
