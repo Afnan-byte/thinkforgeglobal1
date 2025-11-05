@@ -10,16 +10,6 @@ const GOOGLE_SHEET_CSV_URL =
 
 const staticRoutes = ["/", "/blog", "/careers", "/connect"];
 
-// Clean text into slug format
-function cleanSlug(text = "") {
-  return text
-    .replace(/<[^>]*>/g, "")        // remove HTML tags
-    .replace(/[^\w\s-]/g, "")       // remove weird chars
-    .trim()
-    .toLowerCase()
-    .replace(/\s+/g, "-");          // convert spaces → hyphens
-}
-
 async function fetchBlogSlugs() {
   try {
     const res = await fetch(GOOGLE_SHEET_CSV_URL);
@@ -29,21 +19,20 @@ async function fetchBlogSlugs() {
 
     rows.forEach((row) => {
       const cols = row.split(",");
-      const rawText = cols[0]?.trim();
-      const dateStr = cols[2]?.trim();
+      const rawSlug = cols[0]?.trim();  // slug is first column
+      const dateStr = cols[2]?.trim();  // date is third column
 
-      if (!rawText) return;
+      if (!rawSlug) return;
 
-      const slug = cleanSlug(rawText);
+      const slug = rawSlug.toLowerCase();
 
-      // ✅ VALIDATION RULES TO AVOID CONTENT TEXT
-      if (!slug) return;
-      if (slug.includes("<") || slug.includes(">")) return;        // no HTML
-      if (slug.length > 80) return;                                // too long = sentence
-      if (slug.split("-").length > 6) return;                      // too many hyphens = sentence
-      if (!/^[a-z0-9-]+$/.test(slug)) return;                      // invalid chars
-      if (!/[a-zA-Z]/.test(slug)) return;                          // must contain letters
+      // ✅ accept only real slug pattern
+      // letters, numbers, hyphens only
+      if (!/^[a-z0-9-]+$/.test(slug)) return;
+      if (slug.length > 60) return;
+      if (slug.split("-").length > 10) return; // avoid sentences
 
+      // ✅ parse date or use today
       const parsedDate = new Date(dateStr);
       const validDate =
         !isNaN(parsedDate.getTime()) && parsedDate.getFullYear() > 1990
@@ -61,12 +50,13 @@ async function fetchBlogSlugs() {
 }
 
 async function generateSitemap() {
-  console.log("⚙️ Generating SEO-friendly sitemap...");
+  console.log("⚙️ Generating sitemap...");
 
   const blogSlugs = await fetchBlogSlugs();
   const urls = [];
   const today = new Date().toISOString();
 
+  // static pages
   staticRoutes.forEach((route) => {
     urls.push({
       loc: `${BASE_URL}${route}`,
@@ -76,6 +66,7 @@ async function generateSitemap() {
     });
   });
 
+  // blog pages
   blogSlugs.forEach(({ slug, date }) => {
     urls.push({
       loc: `${BASE_URL}/blog/${slug}`,
@@ -100,7 +91,7 @@ ${urls
 </urlset>`;
 
   await fs.outputFile(sitemapPath, xml);
-  console.log(`✅ Sitemap generated successfully (${urls.length} URLs).`);
+  console.log(`✅ Sitemap generated successfully (${urls.length} URLs)`);
 }
 
 generateSitemap();
