@@ -5,19 +5,21 @@ import fetch from "node-fetch";
 const BASE_URL = "https://www.thinkforgeglobal.com";
 const sitemapPath = path.resolve("public/sitemap.xml");
 
-// Your actual Google Sheet CSV URL
 const GOOGLE_SHEET_CSV_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vSfsX1M35N5TpwciUq2onec2hhq4jS3405lkOTLxAIeFOEHPVyc5tM1v8yBAFes4XfLpzeUnLVpVTGY/pub?gid=0&single=true&output=csv";
 
-// Define static routes (Removed fragment URLs like /#hero)
-const staticRoutes = [
-  "/",
-  "/blog",
-  "/careers",
-  "/connect",
-];
+const staticRoutes = ["/", "/blog", "/careers", "/connect"];
 
-// Fetch blog slugs dynamically from your Google Sheet
+// convert text to slug safely
+function cleanSlug(text = "") {
+  return text
+    .replace(/<[^>]*>/g, "")        // remove HTML tags
+    .replace(/[^\w\s-]/g, "")       // remove strange chars
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "-");          // spaces → hyphens
+}
+
 async function fetchBlogSlugs() {
   try {
     const res = await fetch(GOOGLE_SHEET_CSV_URL);
@@ -27,32 +29,22 @@ async function fetchBlogSlugs() {
 
     rows.forEach((row) => {
       const cols = row.split(",");
-      const slug = cols[0]?.trim(); // slug column
-      const dateStr = cols[2]?.trim(); // date column
-      let lastmod;
+      const rawText = cols[0]?.trim();
+      const dateStr = cols[2]?.trim();
 
-      if (dateStr) {
-        const parsedDate = new Date(dateStr);
-        const year = parsedDate.getFullYear();
+      if (!rawText) return;
 
-        // Check if date is valid AND the year is reasonable (e.g., after 1990)
-        // This will catch errors like "0202-12-09"
-        if (!isNaN(parsedDate.getTime()) && year > 1990) {
-          lastmod = parsedDate.toISOString();
-        } else {
-          // The date in the sheet is invalid or empty
-          // We'll fall back to today's date to prevent sitemap errors
-          console.warn(
-            `⚠️ Invalid or old date "${dateStr}" for slug "${slug}". Defaulting to today.`
-          );
-          lastmod = new Date().toISOString();
-        }
-      } else {
-        // No date provided, default to today
-        lastmod = new Date().toISOString();
-      }
+      const slug = cleanSlug(rawText);
 
-      if (slug) slugs.push({ slug, date: lastmod });
+      if (!slug || slug.length < 1) return;
+
+      const parsedDate = new Date(dateStr);
+      const validDate =
+        !isNaN(parsedDate.getTime()) && parsedDate.getFullYear() > 1990
+          ? parsedDate.toISOString()
+          : new Date().toISOString();
+
+      slugs.push({ slug, date: validDate });
     });
 
     return slugs;
@@ -69,27 +61,24 @@ async function generateSitemap() {
   const urls = [];
   const today = new Date().toISOString();
 
-  // Add static routes
   staticRoutes.forEach((route) => {
     urls.push({
       loc: `${BASE_URL}${route}`,
-      lastmod: today, // Use consistent ISO string date
+      lastmod: today,
       changefreq: "weekly",
       priority: route === "/" ? 1.0 : 0.9,
     });
   });
 
-  // Add dynamic blog pages
   blogSlugs.forEach(({ slug, date }) => {
     urls.push({
       loc: `${BASE_URL}/blog/${slug}`,
-      lastmod: date, // Use the date from the sheet (or fallback)
+      lastmod: date,
       changefreq: "daily",
       priority: 0.8,
     });
   });
 
-  // Generate XML
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
@@ -105,7 +94,7 @@ ${urls
 </urlset>`;
 
   await fs.outputFile(sitemapPath, xml);
-  console.log(`✅ Sitemap successfully generated with ${urls.length} URLs.`);
+  console.log(`✅ Sitemap created with ${urls.length} URLs.`);
 }
 
 generateSitemap();
