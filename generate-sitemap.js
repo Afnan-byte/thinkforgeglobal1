@@ -10,14 +10,14 @@ const GOOGLE_SHEET_CSV_URL =
 
 const staticRoutes = ["/", "/blog", "/careers", "/connect"];
 
-// convert text to slug safely
+// Clean text into slug format
 function cleanSlug(text = "") {
   return text
     .replace(/<[^>]*>/g, "")        // remove HTML tags
-    .replace(/[^\w\s-]/g, "")       // remove strange chars
+    .replace(/[^\w\s-]/g, "")       // remove weird chars
     .trim()
     .toLowerCase()
-    .replace(/\s+/g, "-");          // spaces → hyphens
+    .replace(/\s+/g, "-");          // convert spaces → hyphens
 }
 
 async function fetchBlogSlugs() {
@@ -36,7 +36,13 @@ async function fetchBlogSlugs() {
 
       const slug = cleanSlug(rawText);
 
-      if (!slug || slug.length < 1) return;
+      // ✅ VALIDATION RULES TO AVOID CONTENT TEXT
+      if (!slug) return;
+      if (slug.includes("<") || slug.includes(">")) return;        // no HTML
+      if (slug.length > 80) return;                                // too long = sentence
+      if (slug.split("-").length > 6) return;                      // too many hyphens = sentence
+      if (!/^[a-z0-9-]+$/.test(slug)) return;                      // invalid chars
+      if (!/[a-zA-Z]/.test(slug)) return;                          // must contain letters
 
       const parsedDate = new Date(dateStr);
       const validDate =
@@ -94,7 +100,7 @@ ${urls
 </urlset>`;
 
   await fs.outputFile(sitemapPath, xml);
-  console.log(`✅ Sitemap created with ${urls.length} URLs.`);
+  console.log(`✅ Sitemap generated successfully (${urls.length} URLs).`);
 }
 
 generateSitemap();
