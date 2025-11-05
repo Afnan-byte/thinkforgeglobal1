@@ -8,7 +8,14 @@ const jobPositions = [
     title: "Graphic Designer",
     type: "Full Time",
     experience: "1–2 years",
-    skills: ["Adobe Photoshop", "Illustrator", "Creativity"],
+    skills: [
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Typography",
+      "Branding",
+      "Creativity",
+      "Layout Design"
+    ],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
   },
@@ -16,8 +23,16 @@ const jobPositions = [
     id: "ui-ux-designer-01",
     title: "UI/UX Designer",
     type: "Full Time",
-     experience: "1–2 years",
-    skills: ["Adobe Photoshop", "Illustrator", "Creativity"],
+    experience: "1–3 years",
+    skills: [
+      "Figma",
+      "Adobe XD",
+      "Wireframing",
+      "Prototyping",
+      "User Research",
+      "Interaction Design",
+      "Design Systems"
+    ],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
   },
@@ -25,8 +40,15 @@ const jobPositions = [
     id: "digital-marketer-01",
     title: "Digital Marketer",
     type: "Full Time",
-     experience: "1–2 years",
-    skills: ["Adobe Photoshop", "Illustrator", "Creativity"],
+    experience: "1–3 years",
+    skills: [
+      "Social Media Marketing",
+      "Google Ads",
+      "Email Marketing",
+      "Content Strategy",
+      "Analytics & Reporting",
+      "SEO Basics"
+    ],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
   },
@@ -34,8 +56,16 @@ const jobPositions = [
     id: "seo-specialist-01",
     title: "SEO Specialist",
     type: "Full Time",
-     experience: "1–2 years",
-    skills: ["Adobe Photoshop", "Illustrator", "Creativity"],
+    experience: "1–3 years",
+    skills: [
+      "Keyword Research",
+      "On-page SEO",
+      "Off-page SEO",
+      "Google Analytics",
+      "Search Console",
+      "Content Optimization",
+      "Technical SEO"
+    ],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
   },
@@ -43,8 +73,13 @@ const jobPositions = [
     id: "software-trainee-01",
     title: "Software Trainee",
     type: "Full Time",
-     experience: "1–2 years",
-    skills: ["Adobe Photoshop", "Illustrator", "Creativity"],
+    experience: "Fresher / 0–1 year",
+    skills: [
+      "Basic Programming (JavaScript, Python, or Java)",
+      "Problem Solving",
+      "HTML & CSS",
+      "Version Control (Git)",
+    ],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
   },
@@ -52,12 +87,21 @@ const jobPositions = [
     id: "software-developer-01",
     title: "Software Developer",
     type: "Full Time",
-     experience: "1–2 years",
-    skills: ["Adobe Photoshop", "Illustrator", "Creativity"],
+    experience: "1–3 years",
+    skills: [
+      "JavaScript / TypeScript",
+      "React.js or Node.js",
+      "RESTful APIs",
+      "Database Management (MySQL, MongoDB)",
+      "Git & Version Control",
+      "Problem Solving",
+      "Clean Code Practices"
+    ],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
   },
 ];
+
 
 
 export default function OpenPositions() {
