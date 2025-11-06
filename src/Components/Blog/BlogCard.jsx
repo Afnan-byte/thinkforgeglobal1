@@ -23,7 +23,7 @@ export function BlogCardItem({ post }) {
   return temp.textContent || temp.innerText || "";
 }
 
-  const { slug, imageUrl, title, date, categories, introduction } = post;
+  const { slug, imageUrl, title, date, categories, introduction, author } = post;
 
   return (
     <Link
@@ -41,33 +41,38 @@ export function BlogCardItem({ post }) {
           />
         </div>
 
-        <CardContent className="w-full h-1/2 p-6 flex flex-col justify-between">
-          <div>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {categories?.map((category, i) => (
-                <Badge
-                  key={i}
-                  variant="secondary"
-                  className="bg-[#929292] text-white border-none hover:bg-gray-700"
-                >
-                  {category}
-                </Badge>
-              ))}
-            </div>
+       <CardContent className="w-full h-1/2 p-6 flex flex-col justify-between">
+  <div>
+    <div className="flex flex-wrap gap-2 mb-4">
+      {categories?.map((category, i) => (
+        <Badge
+          key={i}
+          variant="secondary"
+          className="bg-[#929292] text-white border-none hover:bg-gray-700"
+        >
+          {category}
+        </Badge>
+      ))}
+    </div>
 
-            <h3 className="text-lg font-semibold leading-tight text-black mb-2 line-clamp-2">
-              {title}
-            </h3>
+    <h3 className="text-lg font-semibold leading-tight text-black mb-2 line-clamp-2">
+      {title}
+    </h3>
 
-            {introduction && (
-              <p className="text-sm text-gray-600 line-clamp-2 mb-3">
-                {stripHTML(introduction)}
-              </p>
-            )}
-          </div>
+    {introduction && (
+      <p className="text-sm text-gray-600 line-clamp-2 mb-3">
+        {stripHTML(introduction)}
+      </p>
+    )}
+  </div>
 
-          <p className="text-xs text-gray-500 mt-auto">{date}</p>
-        </CardContent>
+  <div className="flex items-center justify-between text-xs text-gray-500 mt-auto pt-2">
+    <span className="font-medium text-gray-700">{author}</span>
+    <span className="text-gray-500">{date}</span>
+  </div>
+
+</CardContent>
+
       </Card>
     </Link>
   );

@@ -92,7 +92,16 @@ export default function BlogPostPage() {
 
           {post.subtitle1 && (
             <>
-              <div dangerouslySetInnerHTML={{ __html: post.subcontent1 }} />
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
+                {post.subtitle1}
+              </h2>
+
+              {post.subcontent1 && (
+                <div
+                  className="mb-6"
+                  dangerouslySetInnerHTML={{ __html: post.subcontent1 }}
+                />
+              )}
             </>
           )}
         </article>

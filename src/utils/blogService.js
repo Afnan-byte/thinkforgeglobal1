@@ -22,6 +22,7 @@ export async function fetchAllBlogs() {
       .map((row) => ({
         slug: row.slug || "",
         title: row.title || "",
+        author: row.author || "",
         date: row.date || "",
         categories: row.categories
           ? row.categories.split(",").map((c) => c.trim())
