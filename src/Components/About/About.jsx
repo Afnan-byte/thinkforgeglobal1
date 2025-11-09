@@ -6,7 +6,7 @@ export default function About() {
       className="bg-black text-white py-10 sm:py-24 font-sh-ad-grotesk"
       id="about"
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-0 space-y-16 md:space-y-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-0 space-y-16 md:space-y-28">
         <section className="grid md:grid-cols-[1fr_2fr] gap-6 md:gap-16 items-start">
           <div>
             <h2 className="text-3xl sm:text-4xl font-semibold leading-tight">

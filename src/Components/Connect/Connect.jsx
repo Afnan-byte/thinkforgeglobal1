@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa6";
 import hero from "../Assets/hero21.webp";
-const InteractiveGridPattern = React.lazy(() =>
-  import("../IntractiveGrid/IntractiveGrid")
-);
+
 
 export default function ConnectSection({ variant = "default" }) {
   const [showForm, setShowForm] = useState(false);
@@ -29,24 +27,12 @@ export default function ConnectSection({ variant = "default" }) {
         className="relative bg-white min-h-screen px-4 py-12 overflow-hidden rounded-xl"
         id="team"
       >
-        <InteractiveGridPattern
-          className="absolute inset-0 mask-[radial-gradient(400px_circle_at_center,white,transparent)] text-gray-100 z-10 pointer-events-auto"
-          width={60}
-          height={60}
-          squares={[80, 80]}
-        />
-        <InteractiveGridPattern
-          className="absolute inset-0 text-gray-300 z-10 pointer-events-auto"
-          width={60}
-          height={60}
-          squares={[80, 80]}
-        />
+       <div className="absolute inset-0 bg-grid"></div>
 
         <img
           src={hero}
           alt="Background"
-          fetchPriority="high"
-          loading="eager"
+          loading="lazy"
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover object-center z-20 pointer-events-none"
         />

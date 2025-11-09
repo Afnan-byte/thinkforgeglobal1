@@ -2,6 +2,8 @@ import React, { useEffect, useState, lazy, Suspense } from "react";
 import { fetchAllBlogs } from "@/utils/blogService";
 import { Skeleton } from "@/Components/ui/Skeleton";
 import Loader from "@/Components/Loader/Loader";
+import { Helmet } from "react-helmet-async";
+
 
 const BlogCarousel = lazy(() => import("@/Components/Blog/BlogCarousel"));
 const BlogCard = lazy(() => import("@/Components/Blog/BlogCard"));
@@ -11,17 +13,14 @@ function BlogPage() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-
   useEffect(() => {
     const cacheKey = "blogs_cache_v3";
     const cached = localStorage.getItem(cacheKey);
 
-  
     if (cached) {
       setPosts(JSON.parse(cached));
     }
 
-  
     (async () => {
       try {
         const freshData = await fetchAllBlogs();
@@ -52,12 +51,14 @@ function BlogPage() {
 
   return (
     <>
-      <title>Blog | Think Forge</title>
-      <meta
-        name="description"
-        content="Insights from a top software development and AI company in Kerala. Read about AI, IT, and tech trends from our team in Perinthalmanna."
-      />
-      <link rel="canonical" href="https://www.thinkforgeglobal.com/blog" />
+      <Helmet>
+        <title>Blog | Think Forge</title>
+        <meta
+          name="description"
+          content="Insights from a top software development and AI company in Kerala. Read about AI, IT, and tech trends from our team in Perinthalmanna."
+        />
+        <link rel="canonical" href="https://www.thinkforgeglobal.com/blog" />
+      </Helmet>
 
       <Suspense fallback={<Loader />}>
         <BlogCarousel posts={carouselPosts} />

@@ -1,5 +1,5 @@
 import React from "react";
-import InteractiveGridPattern from "../IntractiveGrid/IntractiveGrid";
+
 
 
 const jobPositions = [
@@ -107,12 +107,13 @@ const jobPositions = [
 export default function OpenPositions() {
   return (
     <div className="bg-white py-20 px-6 sm:px-10 relative">
-      <InteractiveGridPattern
+      {/* <InteractiveGridPattern
         className="absolute inset-0 mask-[radial-gradient(400px_circle_at_center,white,transparent)] text-gray-200 z-0"
         width={60}
         height={60}
         squares={[80, 80]}
-      />
+      /> */}
+       <div className="absolute inset-0 bg-grid"></div>
       <div className="relative z-10 max-w-7xl mx-auto">
         <h2 className="text-center text-3xl sm:text-4xl md:text-5xl leading-tight font-cal-sans mb-14">
           <span className="text-red-500">Open</span> Positions

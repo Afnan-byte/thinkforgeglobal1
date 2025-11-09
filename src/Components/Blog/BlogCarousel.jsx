@@ -3,6 +3,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { Badge } from "../ui/Badge";
 import { Card, CardContent } from "../ui/Card";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/Carousel";
+import { optimizeImage } from "@/utils/cdnOptimize";
 
 export function BlogCarouselItem({ slug, imageUrl, title, date, categories }) {
   return (
@@ -12,11 +13,10 @@ export function BlogCarouselItem({ slug, imageUrl, title, date, categories }) {
           {/* Image Section */}
           <div className="relative w-full md:w-[65%] h-64 md:h-full flex-shrink-0">
             <img
-              src={imageUrl}
+              src={optimizeImage(imageUrl, 1600)}
               alt={title}
               className="w-full h-full object-cover"
-              loading="eager"
-              fetchpriority="high"
+              loading="lazy"
               decoding="async"
             />
           </div>
@@ -60,8 +60,8 @@ export default function BlogCarousel({ posts }) {
     <section className="w-full bg-black min-h-screen pt-24 px-4 md:p-28">
       <h2 className="text-2xl md:text-3xl font-normal mb-8 text-white">
         Hey, We are{" "}
-        <span className="text-red-500 font-semibold">Think Forge Global</span> and
-        these are our thoughts and ideas.
+        <span className="text-red-500 font-semibold">Think Forge Global</span>{" "}
+        and these are our thoughts and ideas.
       </h2>
 
       <Carousel

@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { fetchBlogBySlug } from "@/utils/blogService";
 import Loader from "../Loader/Loader";
 import { Badge } from "../ui/Badge";
+import { optimizeImage } from "@/utils/cdnOptimize";
 
 export default function BlogPostPage() {
   const { slug } = useParams();
@@ -69,10 +70,10 @@ export default function BlogPostPage() {
           </div>
           <div className="hidden md:block w-full aspect-video rounded-lg overflow-hidden mt-12 mb-[-180px] relative z-10">
             <img
-              src={post.imageUrl}
+              src={optimizeImage(post.imageUrl, 1600)}
               alt={post.title}
               className="w-full h-full object-cover"
-              loading="lazy"
+              loading="eager"
               decoding="async"
             />
           </div>

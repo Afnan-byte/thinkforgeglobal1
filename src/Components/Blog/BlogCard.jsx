@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Card, CardContent } from "../ui/Card";
 import { Badge } from "../ui/Badge";
 import { Skeleton } from "../ui/Skeleton";
+import { optimizeImage } from "@/utils/cdnOptimize";
 
 export function BlogCardItem({ post }) {
   if (!post) {
@@ -18,12 +19,13 @@ export function BlogCardItem({ post }) {
   }
 
   function stripHTML(html) {
-  const temp = document.createElement("div");
-  temp.innerHTML = html;
-  return temp.textContent || temp.innerText || "";
-}
+    const temp = document.createElement("div");
+    temp.innerHTML = html;
+    return temp.textContent || temp.innerText || "";
+  }
 
-  const { slug, imageUrl, title, date, categories, introduction, author } = post;
+  const { slug, imageUrl, title, date, categories, introduction, author } =
+    post;
 
   return (
     <Link
@@ -33,7 +35,7 @@ export function BlogCardItem({ post }) {
       <Card className="overflow-hidden flex flex-col h-[500px] border border-gray-200 bg-white rounded-2xl shadow-md">
         <div className="relative w-full h-1/2 flex-shrink-0">
           <img
-            src={imageUrl}
+            src={optimizeImage(imageUrl, 600)}
             alt={title}
             className="w-full h-full object-cover"
             loading="lazy"
@@ -41,38 +43,36 @@ export function BlogCardItem({ post }) {
           />
         </div>
 
-       <CardContent className="w-full h-1/2 p-6 flex flex-col justify-between">
-  <div>
-    <div className="flex flex-wrap gap-2 mb-4">
-      {categories?.map((category, i) => (
-        <Badge
-          key={i}
-          variant="secondary"
-          className="bg-[#929292] text-white border-none hover:bg-gray-700"
-        >
-          {category}
-        </Badge>
-      ))}
-    </div>
+        <CardContent className="w-full h-1/2 p-6 flex flex-col justify-between">
+          <div>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {categories?.map((category, i) => (
+                <Badge
+                  key={i}
+                  variant="secondary"
+                  className="bg-[#929292] text-white border-none hover:bg-gray-700"
+                >
+                  {category}
+                </Badge>
+              ))}
+            </div>
 
-    <h3 className="text-lg font-semibold leading-tight text-black mb-2 line-clamp-2">
-      {title}
-    </h3>
+            <h3 className="text-lg font-semibold leading-tight text-black mb-2 line-clamp-2">
+              {title}
+            </h3>
 
-    {introduction && (
-      <p className="text-sm text-gray-600 line-clamp-2 mb-3">
-        {stripHTML(introduction)}
-      </p>
-    )}
-  </div>
+            {introduction && (
+              <p className="text-sm text-gray-600 line-clamp-2 mb-3">
+                {stripHTML(introduction)}
+              </p>
+            )}
+          </div>
 
-  <div className="flex items-center justify-between text-xs text-gray-500 mt-auto pt-2">
-    <span className="font-medium text-gray-700">{author}</span>
-    <span className="text-gray-500">{date}</span>
-  </div>
-
-</CardContent>
-
+          <div className="flex items-center justify-between text-xs text-gray-500 mt-auto pt-2">
+            <span className="font-medium text-gray-700">{author}</span>
+            <span className="text-gray-500">{date}</span>
+          </div>
+        </CardContent>
       </Card>
     </Link>
   );

@@ -1,29 +1,55 @@
 import React from "react";
-import {
-  FaInstagram,
-  FaLinkedinIn,
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaWhatsapp,
-} from "react-icons/fa";
+
+import { FaPhone } from "react-icons/fa6";
+import { FaEnvelope } from "react-icons/fa6";
+
+const IconLinkedIn = () => (
+  <svg width="20" height="20" fill="white" viewBox="0 0 448 512">
+    <path d="M100.28 448H7.4V148.9h92.88zm-46.44-338C24.9 110 0 85 0 54.4A54.4 54.4 0 0 1 108.8 54.4c0 30.5-24.9 55.5-55 55.5zM447.9 448h-92.8V302.4c0-34.7-12.4-58.3-43.5-58.3-23.7 0-37.8 16-44 31.4-2.3 5.5-2.8 13.2-2.8 20.9V448h-92.8s1.2-241.4 0-266.1h92.8v37.7c12.3-19 34.3-46.3 83.6-46.3 61 0 107 40 107 125.7V448z" />
+  </svg>
+);
+
+const IconInstagram = () => (
+  <svg width="20" height="20" fill="white" viewBox="0 0 448 512">
+    <path d="M224.1 141c-63.6 0-114.9 51.2-114.9 114.8s51.3 114.9 114.9 114.9S339 319.4 339 255.8 287.7 141 224.1 141zm89.6-24.8c0 14.9-12 26.8-26.8 26.8-14.8 0-26.8-11.9-26.8-26.8s12-26.8 26.8-26.8c14.8 0 26.8 12 26.8 26.8zM224.1 338c-45.4 0-82.2-36.8-82.2-82.2S178.7 173.7 224.1 173.7 306.3 210.5 306.3 256 269.5 338 224.1 338zm124.7 106.4H99.2c-35.3 0-63.9-28.6-63.9-63.9V131.5c0-35.3 28.6-63.9 63.9-63.9h249.6c35.3 0 63.9 28.6 63.9 63.9v249.6c0 35.3-28.7 63.9-63.9 63.9z" />
+  </svg>
+);
+
+const IconWhatsapp = () => (
+  <svg width="20" height="20" fill="white" viewBox="0 0 448 512">
+    <path d="M380.9 97.1C339 55.1 284.6 32 225.6 32 113.9 32 24 121.9 24 233.6c0 36.6 9.6 72.4 27.9 104l-29.4 107 109.7-28.8c30.6 16.6 65 25.4 100.3 25.4h.1c111.7 0 200.5-89.9 200.5-201.6 0-59-23.2-113.4-65.2-155.4zM225.5 403.5h-.1c-31.5 0-62.3-8.5-89.1-24.6l-6.4-3.8-65 17.1 17.4-63.2-4.1-6.5c-17.3-27.4-26.4-59.3-26.4-92 0-94.2 76.7-170.8 170.9-170.8 45.6 0 88.4 17.7 120.7 50 32.3 32.3 50.2 75.2 50.2 120.8 0 94.2-76.7 170.8-170.8 170.8zm96.6-121.7c-5.3-2.6-31.4-15.5-36.3-17.3-4.9-1.8-8.4-2.6-12 2.6-3.6 5.3-13.8 17.3-16.9 20.9-3.1 3.6-6.2 4-11.5 1.3-31.3-15.6-51.8-27.9-72.3-63.3-5.5-9.4 5.5-8.8 15.6-29.3 1.7-3.6.9-6.7-.4-9.3-1.3-2.6-12-28.9-16.4-39.7-4.3-10.3-8.6-8.9-12-9.1-3.1-.2-6.7-.2-10.3-.2-3.6 0-9.3 1.3-14.2 6.7-4.9 5.3-18.7 18.2-18.7 44.5 0 26.3 19.2 51.7 21.9 55.3 2.7 3.6 37.9 57.9 91.9 81 12.4 5.4 22.1 8.7 29.7 11.2 12.5 3.9 23.9 3.3 33-2 10.2-6 31.4-24.6 35.9-48.3 4.5-23.6-3.5-39.3-8.7-42.1z" />
+  </svg>
+);
+
+const IconLocation = ({ className }) => (
+  <svg
+    className={className}
+    width="20"
+    height="20"
+    fill="#ef4444"
+    viewBox="0 0 384 512"
+  >
+    <path d="M192 0C86 0 0 86 0 192c0 87 122.2 264.9 175 327.4a23.9 23.9 0 0 0 34 0C261.8 456.9 384 279 384 192 384 86 298 0 192 0zm0 272a80 80 0 1 1 80-80 80.2 80.2 0 0 1-80 80z" />
+  </svg>
+);
+
 import logo from "../Assets/footer.webp";
 
 export default function Footer() {
   const socialLinks = [
     {
-      icon: <FaLinkedinIn className="text-white" />,
+      icon: <IconLinkedIn className="text-white" />,
       url: "https://www.linkedin.com/company/think-forge-global",
       color: "hover:bg-blue-600",
     },
     {
-      icon: <FaInstagram className="text-white"  />,
+      icon: <IconInstagram className="text-white" />,
       url: "https://www.instagram.com/think_forge_global/",
       color: "hover:bg-gradient-to-r from-purple-500 to-pink-500",
     },
-     {
-      icon: <FaWhatsapp className="text-white" />,
-      url: "https://wa.me/919745004161", 
+    {
+      icon: <IconWhatsapp className="text-white" />,
+      url: "https://wa.me/919745004161",
       color: "hover:bg-green-500",
     },
   ];
@@ -43,10 +69,10 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="py-4 pr-4 border-b border-gray-300 md:border-r">
               <h3 className="font-bold text-base mb-3 flex items-center">
-                <FaMapMarkerAlt className="mr-2 text-red-500" /> Address
+                <IconLocation className="mr-2 text-red-500" /> Address
               </h3>
               <p className="text-gray-700 text-sm leading-relaxed max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
-               Think Forge Global LLP <br />
+                Think Forge Global LLP <br />
                 Second Floor, Ayisha Complex, <br />
                 Perinthalmanna, Malappuram, Kerala, <br />
                 India - 679322
@@ -80,7 +106,7 @@ export default function Footer() {
             <div className="py-4 md:pl-8">
               <h3 className="font-bold text-base mb-3 flex items-center">
                 {" "}
-                <FaPhoneAlt className="mr-2 text-red-500" /> Phone
+                <FaPhone className="mr-2 text-red-500" /> Phone
               </h3>
               <a
                 href="tel:+919745004161"
@@ -109,7 +135,9 @@ export default function Footer() {
               <img
                 src={logo}
                 alt="Think Forge Global"
-                className="w-48 md:w-56"
+                width="224"
+                height="64"
+                className="w-48 md:w-56 h-auto"
               />
             </a>
           </div>

@@ -1,23 +1,38 @@
-import ConnectSection from "@/Components/Connect/Connect";
-import ContactForm from "@/Components/Connect/ConnectForm";
-import FloatingWhatsapp from "@/Components/FloatingWhatsapp";
-import React from "react";
+import { lazy, Suspense } from "react";
+import { Helmet } from "react-helmet-async";
+import Loader from "@/Components/Loader/Loader";
+
+const ConnectSection = lazy(() => import("@/Components/Connect/Connect"));
+const ContactForm = lazy(() => import("@/Components/Connect/ConnectForm"));
+const FloatingWhatsapp = lazy(() => import("@/Components/FloatingWhatsapp"));
 
 function ConnectPage() {
   return (
     <>
-    <title>Contact a Top IT Company in Perinthalmanna | Think Forge Global</title>
-      <meta
-        name="description"
-        content="Contact Think Forge Global. As one of the leading AI companies in Kerala and a top IT company in Perinthalmanna, we're ready to start your project."
-      />
-      <link rel="canonical" href="https://www.thinkforgeglobal.com/connect" />
+      <Helmet>
+        <title>Connect with Top Software Development Companies in Kerala</title>
+        <meta
+          name="description"
+          content="Connect with ThinkForge Global — one of the top software development companies in Kerala. Let’s build your next digital solution together."
+        />
+        <link rel="canonical" href="https://www.thinkforgeglobal.com/connect" />
+        <link rel="preload" as="image" href="/src/Components/Assets/hero21.webp" fetchpriority="high" />
 
-    <div className=" bg-black pt-8 pb-20">
+
+      </Helmet>
+      <div className=" bg-black pt-8 pb-20">
         <ConnectSection variant="primary" />
-        <ContactForm />
-        <FloatingWhatsapp />
-    </div>
+        <Suspense
+          fallback={
+            <div className="min-h-screen flex items-center justify-center">
+              <Loader />
+            </div>
+          }
+        >
+          <ContactForm />
+          <FloatingWhatsapp />
+        </Suspense>
+      </div>
     </>
   );
 }

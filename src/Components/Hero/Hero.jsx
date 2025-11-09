@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { FaWhatsapp } from "react-icons/fa";
-import hero from "../Assets/hero21.webp";
-import InteractiveGridPattern from "../IntractiveGrid/IntractiveGrid";
+import { FaWhatsapp } from "react-icons/fa6";
+
 
 export default function Hero() {
   const [showForm, setShowForm] = useState(false);
@@ -19,27 +18,25 @@ export default function Hero() {
     <div className="relative bg-white min-h-screen px-4 py-32 overflow-hidden" id="hero">
       
       {/* Background Grid */}
-      <div className="absolute inset-0 z-0">
-        <InteractiveGridPattern
-          className="text-gray-400"
-          width={60}
-          height={60}
-          squares={[80, 80]}
-        />
-      </div>
+    <div className="absolute inset-0 bg-grid"></div>
+
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-white bg-opacity-80 z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-white/40 z-10 pointer-events-none" />
 
       {/* Bottom Image */}
       <div className="absolute bottom-0 left-0 right-0 z-20 pointer-events-none">
-        <img
-          src={hero}
-          alt="Hero Graphic"
-          className="w-full object-cover max-h-[25vh] sm:max-h-[30vh] md:max-h-[40vh]"
-          fetchpriority="high"
-          loading="eager"
-        />
+      <img
+  src="/Image/hero21-small.webp"
+  srcSet="/Image/hero21-small.webp 660w, /Image/hero21.webp 1600w"
+  sizes="(max-width: 768px) 660px, 1600px"
+  alt="Hero Graphic"
+  className="w-full object-cover max-h-[25vh] sm:max-h-[30vh] md:max-h-[40vh]"
+  loading="eager"
+  fetchpriority="high"
+/>
+
+
       </div>
 
       {/* Hero Content */}
@@ -69,6 +66,16 @@ export default function Hero() {
           </button>
         </div>
       </div>
+
+      <a
+        href="https://wa.me/919745004161?text=Hi,%20I%20am%20interested%20in%20a%2030-minute%20consultation.%20Please%20assist%20me."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-4 right-6 md:bottom-10 md:right-10 z-50 flex items-center gap-2 bg-green-500 text-white font-medium px-4 py-3 rounded-full shadow-lg hover:bg-red-500 hover:shadow-xl transition-all text-xs sm:text-sm"
+      >
+        <FaWhatsapp className="text-lg text-black" />
+        30-minute consultation
+      </a>
 
       {/* Form Modal */}
       {showForm && (
@@ -109,6 +116,7 @@ export default function Hero() {
           </div>
         </div>
       )}
+
     </div>
   );
 }
