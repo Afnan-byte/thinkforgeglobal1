@@ -2,7 +2,6 @@ import React, { useEffect, useState, lazy, Suspense } from "react";
 import { fetchAllBlogs } from "@/utils/blogService";
 import { Skeleton } from "@/Components/ui/Skeleton";
 import Loader from "@/Components/Loader/Loader";
-import { Helmet } from "react-helmet-async";
 
 
 const BlogCarousel = lazy(() => import("@/Components/Blog/BlogCarousel"));
@@ -51,14 +50,12 @@ function BlogPage() {
 
   return (
     <>
-      <Helmet>
-        <title>Blog | Think Forge</title>
-        <meta
-          name="description"
-          content="Insights from a top software development and AI company in Kerala. Read about AI, IT, and tech trends from our team in Perinthalmanna."
-        />
-        <link rel="canonical" href="https://www.thinkforgeglobal.com/blog" />
-      </Helmet>
+      <title>Blog | Think Forge</title>
+      <meta
+        name="description"
+        content="Insights from a top software development and AI company in Kerala. Read about AI, IT, and tech trends from our team in Perinthalmanna."
+      />
+      <link rel="canonical" href="https://www.thinkforgeglobal.com/blog" />
 
       <Suspense fallback={<Loader />}>
         <BlogCarousel posts={carouselPosts} />
