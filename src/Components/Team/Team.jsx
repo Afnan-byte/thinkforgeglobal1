@@ -1,6 +1,8 @@
 import React from "react";
 import { FaLinkedinIn } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+
 
 const teamMembers = [
   { name: "CA Praveen P K", title: "Chief Executive Officer", image: "/Image/Team/praveen.webp", linkedin: "https://www.linkedin.com/in/ca-praveen-p-k-96553b10a/" },
@@ -44,7 +46,7 @@ export default function Team() {
                 alt={member.name}
                 width="260"
                 height="240"
-                loading={index < 2 ? "eager" : "lazy"}  /* First 2 preload, rest lazy */
+                loading={index < 2 ? "eager" : "lazy"}  
                 className="w-full h-60 object-cover object-top rounded-xl"
               />
 
@@ -66,15 +68,19 @@ export default function Team() {
             </div>
           ))}
 
-          {/* Apply Now Card */}
           <div className="bg-white w-[260px] rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition duration-300 flex flex-col items-center justify-center text-center p-6">
             <h3 className="text-lg font-semibold mb-2">Think You Belong Here?</h3>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-red-500 my-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 14c4.418 0 8 1.79 8 4v2H4v-2c0-2.21 3.582-4 8-4zM12 12a4 4 0 100-8 4 4 0 000 8z" />
             </svg>
-            <Link to="/careers" className="mt-4 bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition">
-              Apply Now
-            </Link>
+           <HashLink
+  smooth
+  to="/careers#open-positions"
+  className="mt-4 bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 transition"
+>
+  Apply Now
+</HashLink>
+
           </div>
         </div>
       </div>

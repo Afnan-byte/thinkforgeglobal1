@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa6";
 
-
 export default function Hero() {
   const [showForm, setShowForm] = useState(false);
   const [name, setName] = useState("");
@@ -10,33 +9,31 @@ export default function Hero() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const message = `Hello, I am ${name} from ${company}. I would like to connect with you.`;
-    const whatsappUrl = `https://wa.me/919745004161?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/919745004161?text=${encodeURIComponent(
+      message
+    )}`;
     window.open(whatsappUrl, "_blank");
   };
 
   return (
-    <div className="relative bg-white min-h-screen px-4 py-32 overflow-hidden" id="hero">
-      
-      {/* Background Grid */}
-    <div className="absolute inset-0 bg-grid"></div>
+    <div
+      className="relative bg-white min-h-screen px-4 py-32 overflow-hidden"
+      id="hero"
+    >
+      <div className="absolute inset-0 bg-grid"></div>
 
+      <div className="absolute inset-0 z-10 pointer-events-none" />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-white/40 z-10 pointer-events-none" />
-
-      {/* Bottom Image */}
       <div className="absolute bottom-0 left-0 right-0 z-20 pointer-events-none">
-      <img
-  src="/Image/hero21-small.webp"
-  srcSet="/Image/hero21-small.webp 660w, /Image/hero21.webp 1600w"
-  sizes="(max-width: 768px) 660px, 1600px"
-  alt="Hero Graphic"
-  className="w-full object-cover max-h-[25vh] sm:max-h-[30vh] md:max-h-[40vh]"
-  loading="eager"
-  fetchpriority="high"
-/>
-
-
+        <img
+          src="/Image/hero21-small.webp"
+          srcSet="/Image/hero21-small.webp 660w, /Image/hero21.webp 1600w"
+          sizes="(max-width: 768px) 660px, 1600px"
+          alt="Hero Graphic"
+          className="w-full object-cover max-h-[25vh] sm:max-h-[30vh] md:max-h-[40vh]"
+          loading="eager"
+          fetchpriority="high"
+        />
       </div>
 
       {/* Hero Content */}
@@ -116,7 +113,6 @@ export default function Hero() {
           </div>
         </div>
       )}
-
     </div>
   );
 }

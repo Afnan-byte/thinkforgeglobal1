@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 const jobPositions = [
   {
     id: "graphic-designer-01",
@@ -14,7 +12,7 @@ const jobPositions = [
       "Typography",
       "Branding",
       "Creativity",
-      "Layout Design"
+      "Layout Design",
     ],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
@@ -31,7 +29,7 @@ const jobPositions = [
       "Prototyping",
       "User Research",
       "Interaction Design",
-      "Design Systems"
+      "Design Systems",
     ],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
@@ -47,7 +45,7 @@ const jobPositions = [
       "Email Marketing",
       "Content Strategy",
       "Analytics & Reporting",
-      "SEO Basics"
+      "SEO Basics",
     ],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
@@ -64,7 +62,7 @@ const jobPositions = [
       "Google Analytics",
       "Search Console",
       "Content Optimization",
-      "Technical SEO"
+      "Technical SEO",
     ],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
@@ -95,25 +93,23 @@ const jobPositions = [
       "Database Management (MySQL, MongoDB)",
       "Git & Version Control",
       "Problem Solving",
-      "Clean Code Practices"
+      "Clean Code Practices",
     ],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
   },
 ];
 
-
-
 export default function OpenPositions() {
   return (
-    <div className="bg-white py-20 px-6 sm:px-10 relative">
+    <div id="open-positions" className="bg-white py-20 px-6 sm:px-10 relative">
       {/* <InteractiveGridPattern
         className="absolute inset-0 mask-[radial-gradient(400px_circle_at_center,white,transparent)] text-gray-200 z-0"
         width={60}
         height={60}
         squares={[80, 80]}
       /> */}
-       <div className="absolute inset-0 bg-grid"></div>
+      <div className="absolute inset-0 bg-grid"></div>
       <div className="relative z-10 max-w-7xl mx-auto">
         <h2 className="text-center text-3xl sm:text-4xl md:text-5xl leading-tight font-cal-sans mb-14">
           <span className="text-red-500">Open</span> Positions
@@ -132,13 +128,13 @@ export default function OpenPositions() {
                   <span className="bg-[#929292] text-[#FFFFFF] text-xs font-medium font-sh-ad-grotesk px-2.5 py-0.5 rounded-lg">
                     {job.type}
                   </span>
-                   <span className="bg-[#F87171] text-white text-xs font-medium font-sh-ad-grotesk px-2.5 py-0.5 rounded-lg">
-        {job.experience}
-      </span>
+                  <span className="bg-[#F87171] text-white text-xs font-medium font-sh-ad-grotesk px-2.5 py-0.5 rounded-lg">
+                    {job.experience}
+                  </span>
                 </div>
-                 <div className="text-sm text-gray-700 mb-8">
-      <strong>Skills:</strong> {job.skills.join(", ")}
-    </div>
+                <div className="text-sm text-gray-700 mb-8">
+                  <strong>Skills:</strong> {job.skills.join(", ")}
+                </div>
               </div>
               <div>
                 <a
