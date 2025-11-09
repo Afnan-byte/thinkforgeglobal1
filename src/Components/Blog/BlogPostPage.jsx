@@ -15,6 +15,7 @@ export default function BlogPostPage() {
     async function loadPost() {
       try {
         const data = await fetchBlogBySlug(slug);
+        // console.log("data",data)
         setPost(data);
       } catch (err) {
         console.error("Error loading post:", err);
