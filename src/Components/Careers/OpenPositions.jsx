@@ -2,18 +2,11 @@ import React from "react";
 
 const jobPositions = [
   {
-    id: "graphic-designer-01",
-    title: "Graphic Designer",
+    id: "App-developer-1",
+    title: "Mobile App Developer",
     type: "Full Time",
     experience: "1–2 years",
-    skills: [
-      "Adobe Photoshop",
-      "Adobe Illustrator",
-      "Typography",
-      "Branding",
-      "Creativity",
-      "Layout Design",
-    ],
+    skills: ["Flutter", "JavaScript", "REST APIs", "UI Development"],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
   },
