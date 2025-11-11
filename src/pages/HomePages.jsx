@@ -10,10 +10,10 @@ const ConnectSection = lazy(() => import("../Components/Connect/Connect"));
 export default function HomePage() {
   return (
     <>
-      <title>Top-Rated IT Companies in Kerala | ThinkForge Global</title>
+      <title>Top-Rated IT Company in Kerala | ThinkForge Global</title>
       <meta
         name="description"
-        content="Looking for reliable IT companies in Kerala or Malappuram? ThinkForge Global provides expert IT services, software development, and digital innovation."
+        content="ThinkForge Global, a top-rated IT company in Kerala, offers innovative software, web, and digital solutions to help businesses grow and succeed globally."
       />
       <link rel="canonical" href="https://www.thinkforgeglobal.com/" />
       <link

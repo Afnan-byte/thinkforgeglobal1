@@ -36,7 +36,6 @@ export default function Hero() {
         />
       </div>
 
-      {/* Hero Content */}
       <div className="relative z-30 text-center px-6 font-cal-sans font-thin max-w-4xl mx-auto">
         <p className="text-xs sm:text-sm text-gray-600 mb-2 flex items-center justify-center animate-blink">
           <span className="w-2 h-2 bg-green-500 rounded-full mr-2 inline-block"></span>
@@ -54,7 +53,7 @@ export default function Hero() {
           We don’t just create tech, we solve your brand’s biggest challenges
         </p>
 
-        <div className="mt-12 sm:mt-16">
+        <div className="hidden md:block mt-12 sm:mt-16">
           <button
             onClick={() => setShowForm(true)}
             className="px-6 py-3 bg-white border border-gray-300 text-black rounded-full shadow hover:shadow-lg transition text-sm sm:text-base"
@@ -64,17 +63,20 @@ export default function Hero() {
         </div>
       </div>
 
-      <a
-        href="https://wa.me/919745004161?text=Hi,%20I%20am%20interested%20in%20a%2030-minute%20consultation.%20Please%20assist%20me."
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-4 right-6 md:bottom-10 md:right-10 z-50 flex items-center gap-2 bg-green-500 text-white font-medium px-4 py-3 rounded-full shadow-lg hover:bg-red-500 hover:shadow-xl transition-all text-xs sm:text-sm"
-      >
-        <FaWhatsapp className="text-lg text-black" />
-        30-minute consultation
-      </a>
+     <a
+  href="https://wa.me/919745004161?text=Hi,%20I%20am%20interested%20in%20a%2030-minute%20consultation.%20Please%20assist%20me."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed bottom-4 right-6 md:bottom-10 md:right-10 z-50 flex items-center gap-2 
+  bg-green-500 text-black font-medium px-4 py-3 rounded-full 
+  shadow-lg border border-black hover:bg-green-600
+ hover:shadow-xl transition-all text-xs sm:text-sm"
+>
+  <FaWhatsapp className="text-lg text-white" />
+  30-minute free consultation
+</a>
 
-      {/* Form Modal */}
+
       {showForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-md relative">

@@ -9,10 +9,10 @@ const ConnectSection = lazy(() => import("../Components/Connect/Connect"));
 export default function CareersPage() {
   return (
     <>
-      <title>ThinkForge Careers | IT Consulting Companies in Kerala</title>
+      <title>ThinkForge Careers | IT Consulting Company in Kerala</title>
       <meta
         name="description"
-        content="Build your career with one of the top IT consulting companies in Kerala. Join ThinkForge Global and grow with our expert tech team."
+        content="Build your career with one of the top IT consulting company in Kerala. Join ThinkForge Global and grow with our expert tech team."
       />
       <link rel="canonical" href="https://www.thinkforgeglobal.com/careers" />
       <link

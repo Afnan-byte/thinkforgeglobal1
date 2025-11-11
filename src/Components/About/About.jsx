@@ -18,14 +18,14 @@ export default function About() {
           </div>
           <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
             At Think Forge Global, we believe technology should make business
-            easier, not more complicated. As one of the growing IT Companies in
+            easier, not more complicated. As one of the growing IT Company in
             Kerala, we started this journey because, as entrepreneurs ourselves,
             we have experienced the day-to-day challenges business owners face.
             We noticed that many businesses struggle to find reliable,
             high-quality technology partners who genuinely understand their
             needs. This realization inspired the creation of Think Forge Global
             in Perinthalmanna, the entrepreneurship hub of Malappuram district,
-            Kerala. Today, we proudly stand among the trusted IT Companies in
+            Kerala. Today, we proudly stand among the trusted IT Company in
             Malappuram delivering meaningful digital transformation. Our purpose
             is simple: use smart technology to solve real business problems.
           </p>
@@ -175,8 +175,8 @@ export default function About() {
             </li>
             <li>
               Uphold these values every day, defining who we are as one of the
-              most reliable IT Companies in Malappuram and an emerging leader
-              among IT Companies in Kerala.
+              most reliable IT Company in Malappuram and an emerging leader
+              among IT Company in Kerala.
             </li>
           </ul>
         </section>
