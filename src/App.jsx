@@ -3,6 +3,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import Loader from "./Components/Loader/Loader";
 import { Routes, Route } from "react-router-dom";
+import NotFound from "./pages/NotFound";
 
 const HomePage = lazy(() => import("./pages/HomePages"));
 const CareersPage = lazy(() => import("./pages/CareersPage"));
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         <Footer />
