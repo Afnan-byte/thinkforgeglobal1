@@ -91,7 +91,7 @@ export default function Footer() {
               ></iframe>
             </div>
 
-            {/* <div className="py-4 pr-4 border-gray-300 md:border-r">
+            <div className="py-4 pr-4 border-gray-300 md:border-r">
               <h3 className="font-bold text-base mb-3 flex items-center">
                 <FaEnvelope className="mr-2 text-red-500" /> Email
               </h3>
@@ -101,9 +101,9 @@ export default function Footer() {
               >
                 mail@thinkforgeglobal.com
               </a>
-            </div> */}
+            </div>
 
-            <div className="py-4 pr-4 border-gray-300 md:border-r">
+            {/* <div className="py-4 pr-4 border-gray-300 md:border-r">
               <h3 className="font-bold text-base mb-3 flex items-center">
                 <FaEnvelope className="mr-2 text-red-500" /> Contact Us
               </h3>
@@ -134,7 +134,7 @@ export default function Footer() {
                   Send
                 </button>
               </form>
-            </div>
+            </div> */}
 
             <div className="py-4 md:pl-8">
               <h3 className="font-bold text-base mb-3 flex items-center">
