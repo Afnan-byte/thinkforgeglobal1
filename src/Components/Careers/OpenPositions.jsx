@@ -75,18 +75,64 @@ const jobPositions = [
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
   },
   {
-    id: "software-developer-01",
-    title: "Software Developer",
+    id: "shopify-ecom-trainee-01",
+    title: "Shopify & E-commerce Developer Trainee",
     type: "Full Time",
-    experience: "1–3 years",
+    experience: "Fresher / 0–1 year",
     skills: [
-      "JavaScript / TypeScript",
-      "React.js or Node.js",
-      "RESTful APIs",
-      "Database Management (MySQL, MongoDB)",
-      "Git & Version Control",
-      "Problem Solving",
-      "Clean Code Practices",
+      "Shopify store customization",
+      "Themes, Liquid, apps & integrations",
+      "E-commerce workflows & funnels",
+      "Store optimization",
+      "Basic HTML/CSS (plus point)",
+      "Problem-solving & willingness to learn",
+    ],
+
+    applyLink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
+  },
+  {
+    id: "uiux-design-intern-01",
+    title: "Design Intern (UI/UX)",
+    type: "Full Time",
+    experience: "Fresher / 0–1 year",
+    skills: [
+      "UI/UX design for web & mobile",
+      "Graphic design for marketing & branding",
+      "Product design mockups",
+      "Understanding of design principles",
+      "Creativity & attention to detail",
+      "Problem-solving",
+    ],
+    applyLink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
+  },
+  {
+    id: "ai-product-trainee-01",
+    title: "Product Developer (AI Tools)",
+    type: "Full Time",
+    experience: "Fresher / 0–1 year",
+    skills: [
+      "AI-driven product development",
+      "AI-based dev tools & workflows",
+      "Collaboration with engineering teams",
+      "Experimentation & learning mindset",
+      "Problem-solving",
+    ],
+    applyLink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
+  },
+  {
+    id: "flutter-appdev-trainee-01",
+    title: "App Developer Trainee (Flutter)",
+    type: "Full Time",
+    experience: "0–2 years",
+    skills: [
+      "Flutter mobile app development",
+      "Working with APIs & backend systems",
+      "UI/UX implementation",
+      "Teamwork & problem-solving",
+      "Basic Flutter knowledge (freshers can apply)",
     ],
     applyLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
@@ -111,7 +157,7 @@ export default function OpenPositions() {
           {jobPositions.map((job) => (
             <div
               key={job.id}
-              className=" border-[3px] border-[#ED1B24] rounded-lg p-6 bg-white shadow-sm h-72 flex flex-col justify-between"
+              className=" border-[3px] border-[#ED1B24] rounded-lg p-6 bg-white shadow-sm min-h-72 flex flex-col justify-between"
             >
               <div>
                 <h3 className="text-2xl leading-tight font-sh-ad-grotesk font-semibold mb-2 text-left md:text-2xl lg:text-4xl">
