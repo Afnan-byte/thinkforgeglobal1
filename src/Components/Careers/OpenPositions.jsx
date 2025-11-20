@@ -93,7 +93,7 @@ const jobPositions = [
   },
   {
     id: "uiux-design-intern-01",
-    title: "Design Intern (UI/UX)",
+    title: "Design Trainee (UI/UX)",
     type: "Full Time",
     experience: "Fresher / 0–1 year",
     skills: [
@@ -109,7 +109,7 @@ const jobPositions = [
   },
   {
     id: "ai-product-trainee-01",
-    title: "Product Developer (AI Tools)",
+    title: "Product Developer Trainee (AI Tools)",
     type: "Full Time",
     experience: "Fresher / 0–1 year",
     skills: [
