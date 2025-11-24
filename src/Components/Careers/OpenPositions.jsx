@@ -89,7 +89,7 @@ const jobPositions = [
     ],
 
     applyLink:
-      "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
+      "https://docs.google.com/forms/d/1Ty3JxCR6IYP_JMtsqEQO1fIS7HYXR96vuACARZdQdME/viewform",
   },
   {
     id: "uiux-design-intern-01",
@@ -105,7 +105,7 @@ const jobPositions = [
       "Problem-solving",
     ],
     applyLink:
-      "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
+      "https://docs.google.com/forms/d/1Ty3JxCR6IYP_JMtsqEQO1fIS7HYXR96vuACARZdQdME/viewform",
   },
   {
     id: "ai-product-trainee-01",
@@ -120,7 +120,7 @@ const jobPositions = [
       "Problem-solving",
     ],
     applyLink:
-      "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
+      "https://docs.google.com/forms/d/1Ty3JxCR6IYP_JMtsqEQO1fIS7HYXR96vuACARZdQdME/viewform",
   },
   {
     id: "flutter-appdev-trainee-01",
@@ -135,7 +135,7 @@ const jobPositions = [
       "Basic Flutter knowledge (freshers can apply)",
     ],
     applyLink:
-      "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
+      "https://docs.google.com/forms/d/1Ty3JxCR6IYP_JMtsqEQO1fIS7HYXR96vuACARZdQdME/viewform",
   },
 ];
 
