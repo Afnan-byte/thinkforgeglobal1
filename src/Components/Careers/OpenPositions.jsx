@@ -2,6 +2,42 @@ import React from "react";
 
 const jobPositions = [
   {
+    id: "flutter-senior-01",
+    title: "Senior Flutter Developer (Mobile Apps)",
+    type: "Full Time",
+    experience: "4+ years",
+    skills: [
+      "Flutter (Advanced)",
+      "Dart",
+      "Firebase",
+      "REST APIs",
+      "State Management (Bloc, Provider, Riverpod)",
+      "Clean Architecture",
+      "Performance Optimization",
+      "Publishing apps on Play Store / App Store"
+    ],
+    applyLink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
+  },
+   {
+    id: "flutter-junior-01",
+    title: "Junior Flutter Developer (Mobile Apps)",
+    type: "Full Time",
+    experience: "1–2 years",
+    skills: [
+      "Flutter (Intermediate)",
+      "Dart",
+      "Basic State Management",
+      "API Integration",
+      "UI Development",
+      "Bug Fixing & Testing",
+      "Basic Firebase knowledge"
+    ],
+    applyLink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSdIrqaGEaJlbIVCACz8qg7HCAIQc-GuPaAWZRK9gGktuJegrg/viewform",
+  },
+
+  {
     id: "App-developer-1",
     title: "Mobile App Developer",
     type: "Full Time",
