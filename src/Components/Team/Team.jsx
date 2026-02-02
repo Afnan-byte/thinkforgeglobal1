@@ -8,6 +8,8 @@ const teamMembers = [
   { name: "CA Praveen P K", title: "Chief Executive Officer", image: "/Image/Team/praveen.webp", linkedin: "https://www.linkedin.com/in/ca-praveen-p-k-96553b10a/" },
   { name: "Mohammed Shafas", title: "Business And Ops", image: "/Image/Team/shafas.webp", linkedin: "https://www.linkedin.com/in/mohammed-shafas/" },
   { name: "Nijith Nirmal", title: "Senior Product Designer", image: "/Image/Team/nijith.webp", linkedin: "https://www.linkedin.com/in/nijith-nirmal-b90044175/" },
+  { name: "Mohammed Shijad", title: "Digital Marketing Executive", image: "/Image/Team/shijad.webp", linkedin: "https://www.linkedin.com/in/mohammed-shijad/" },
+  { name: "Fathimath Sithara", title: "Business Development Executive", image: "/Image/Team/sithara.webp", linkedin: "https://www.linkedin.com/in/fathimath-sithara-10676812a" },
   { name: "Ullas Raj", title: "Senior Developer", image: "/Image/Team/ullas.webp", linkedin: "https://www.linkedin.com/in/ullas-raj-4a5808169" },
   { name: "Sadasivan K S", title: "Full Stack Developer", image: "/Image/Team/sadasivan.webp", linkedin: "https://www.linkedin.com/in/sadasivan-ks" },
   { name: "Shiju U K", title: "Junior Full Stack Developer", image: "/Image/Team/shiju.webp", linkedin: "https://www.linkedin.com/in/shiju-uk-1a320620a" },
@@ -19,6 +21,8 @@ const teamMembers = [
   { name: "Mohammed Asif", title: "Software Developer Trainee", image: "/Image/Team/asif.webp", linkedin: "https://www.linkedin.com/in/asifap" },
   { name: "Farsin Jabbar", title: "Junior Quality Analyst", image: "/Image/Team/farsin.webp", linkedin: "http://linkedin.com/in/farsin-jabbar-994206313" },
   { name: "Shaimah", title: "Junior Ui/Ux Designer", image: "/Image/Team/shaimah.webp", linkedin: "https://www.linkedin.com/in/fathimathu-shaimah" },
+  { name: "GOKUL KIRAN R", title: "AI Tools Product Developer Trainee", image: "/Image/Team/gokul.webp", linkedin: "https://www.linkedin.com/in/gokulkiranr" },
+
 ];
 
 
