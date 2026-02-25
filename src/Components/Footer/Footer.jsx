@@ -103,6 +103,39 @@ export default function Footer() {
               </a>
             </div>
 
+            {/* <div className="py-4 pr-4 border-gray-300 md:border-r">
+              <h3 className="font-bold text-base mb-3 flex items-center">
+                <FaEnvelope className="mr-2 text-red-500" /> Contact Us
+              </h3>
+
+              <form
+                action="https://formspree.io/f/mldaeqno"
+                method="POST"
+                className="flex flex-col gap-2"
+              >
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Your email"
+                  className="border border-gray-300 rounded px-3 py-1 text-sm focus:outline-none focus:border-red-500"
+                />
+                <textarea
+                  name="message"
+                  required
+                  placeholder="Your message"
+                  rows="2"
+                  className="border border-gray-300 rounded px-3 py-1 text-sm focus:outline-none focus:border-red-500"
+                ></textarea>
+                <button
+                  type="submit"
+                  className="bg-red-500 text-white text-sm px-3 py-1 rounded hover:bg-red-600 transition-colors"
+                >
+                  Send
+                </button>
+              </form>
+            </div> */}
+
             <div className="py-4 md:pl-8">
               <h3 className="font-bold text-base mb-3 flex items-center">
                 {" "}

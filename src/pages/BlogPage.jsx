@@ -50,10 +50,10 @@ function BlogPage() {
 
   return (
     <>
-      <title>Blog | Think Forge</title>
+      <title>Tech Blog by ThinkForge | News, Tips & Trends</title>
       <meta
         name="description"
-        content="Insights from a top software development and AI company in Kerala. Read about AI, IT, and tech trends from our team in Perinthalmanna."
+        content="Explore tech news, tips, and trends on the ThinkForge Tech Blog. Stay updated with insights on AI, cloud, automation, cybersecurity, and innovation."
       />
       <link rel="canonical" href="https://www.thinkforgeglobal.com/blog" />
 
