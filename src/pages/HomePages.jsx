@@ -6,6 +6,7 @@ const About = lazy(() => import("../Components/About/About"));
 const OurServices = lazy(() => import("../Components/Service/Service"));
 const Team = lazy(() => import("../Components/Team/Team"));
 const ConnectSection = lazy(() => import("../Components/Connect/Connect"));
+const Work = lazy(() => import("../Components/Work/Work"));
 
 export default function HomePage() {
   return (
@@ -34,6 +35,7 @@ export default function HomePage() {
         >
           <About />
           <OurServices />
+          {/* <Work /> */}
           <Team />
           <ConnectSection sectionId="connect" />
         </Suspense>
