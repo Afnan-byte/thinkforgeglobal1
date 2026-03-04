@@ -35,7 +35,7 @@ export default function HomePage() {
         >
           <About />
           <OurServices />
-          <Work />
+          {/* <Work /> */}
           <Team />
           <ConnectSection sectionId="connect" />
         </Suspense>
