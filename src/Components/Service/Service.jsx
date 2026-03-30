@@ -43,7 +43,7 @@ export default function OurServices() {
   return (
     <div className="text-white lg:min-h-screen px-4 py-10 bg-black font-sh-ad-grotesk" id="services">
       <div className="relative z-10 w-full max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-cal-sans text-center text-white mb-16">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-cal-sans text-center text-white mb-8">
           Our <span className="text-red-500">Services</span>
         </h2>
 
