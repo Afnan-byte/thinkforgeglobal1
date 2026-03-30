@@ -3,7 +3,7 @@ import { FaWhatsapp } from "react-icons/fa6";
 import hero from "../Assets/hero21.webp";
 
 
-export default function ConnectSection({ variant = "default" }) {
+export default function ConnectSection({ variant = "default", sectionId = "connect" }) {
   const [showForm, setShowForm] = useState(false);
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
@@ -22,10 +22,9 @@ export default function ConnectSection({ variant = "default" }) {
   };
 
   return (
-    <section className="relative bg-black overflow-hidden px-4 py-16 font-cal-sans">
+    <section className="relative bg-black overflow-hidden px-4 py-16 font-cal-sans" id={sectionId}>
       <div
         className="relative bg-white min-h-screen px-4 py-12 overflow-hidden rounded-xl"
-        id="team"
       >
        <div className="absolute inset-0 bg-grid"></div>
 

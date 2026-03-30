@@ -45,11 +45,11 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center text-xs gap-2 z-30">
-          <Link to="/connect">
+          <HashLink to="/connect#connect">
             <button className={`${buttonTheme} rounded py-1 px-2 text-xs`}>
               Contact Us
             </button>
-          </Link>
+          </HashLink>
           <button
             onClick={toggleMenu}
             className="focus:outline-none transition"
@@ -95,13 +95,13 @@ export default function Navbar() {
             Blog
           </Link>
 
-            <Link to="/connect">
+            <HashLink to="/connect#connect">
               <button
                 className={`${buttonTheme} px-4 py-2 rounded hover:opacity-90 transition duration-300`}
               >
                 Contact Us
               </button>
-            </Link>
+            </HashLink>
         </div>
       </div>
 

@@ -30,7 +30,7 @@ export default function About() {
             is simple: use smart technology to solve real business problems.
           </p>
         </section>
-        <section className="grid md:grid-cols-[1fr_2fr] gap-6 md:gap-16 items-start">
+        {/* <section className="grid md:grid-cols-[1fr_2fr] gap-6 md:gap-16 items-start">
           <div>
             <h2 className="text-3xl sm:text-4xl font-semibold leading-tight">
               <span className="text-red-500">What</span> we do
@@ -72,7 +72,7 @@ export default function About() {
               technology for business success.
             </li>
           </ul>
-        </section>
+        </section> */}
         <section className="relative flex flex-col md:flex-row items-start justify-between gap-10 md:gap-14">
           <div className="flex-1">
             <h2 className="text-3xl sm:text-4xl font-semibold leading-tight mb-4">
@@ -148,7 +148,7 @@ export default function About() {
             </ul>
           </div>
         </section>
-
+{/* 
         <section className="grid md:grid-cols-[1fr_2fr] gap-6 md:gap-16 items-start">
           <div>
             <h2 className="text-3xl sm:text-4xl font-semibold leading-tight">
@@ -179,7 +179,7 @@ export default function About() {
               among IT Company in Kerala.
             </li>
           </ul>
-        </section>
+        </section> */}
 
       </div>
     </div>

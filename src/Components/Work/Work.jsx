@@ -1,29 +1,31 @@
 // import React from 'react';
+// import Marquee from '@/Components/ui/Marquee';
+
 
 // const workData = [
 //   {
 //     id: 1,
-//     projectName: "Vanguard",
+//     projectName: "Salmara",
 //     year: "2025",
-//     industry: "Crypto",
-//     image: 'https://images.unsplash.com/photo-1551288049-bbda38a10ad5?auto=format&fit=crop&q=80&w=800&h=600',
-//     description: "Vanguard is a cutting-edge cryptocurrency platform designed for seamless asset management and secure trading. Our work focused on creating a premium user experience that simplifies complex blockchain interactions while maintaining a high-end visual aesthetic."
+//     industry: "E-commerce",
+//     image: '/Image/Projects/salmara.webp',
+//     description: "Salmara is a premium Ayurveda e-commerce platform seamlessly integrated with Shopify. It offers a curated selection of authentic Ayurvedic products, bringing traditional wellness to the modern digital marketplace with a focus on purity and performance."
 //   },
 //   {
 //     id: 2,
-//     projectName: "Horizon UI",
+//     projectName: "Maxtron",
 //     year: "2024",
-//     industry: "Fintech",
-//     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800&h=600',
-//     description: "Horizon UI is a comprehensive dashboard for financial analytics, providing real-time data visualization and deep insights into market trends. We developed a robust design system that allows for scalable growth and consistent branding across all modules."
+//     industry: "ERP Solutions",
+//     image: '/Image/Projects/maxtron.webp',
+//     description: "Maxtron is a comprehensive multi-tenant ERP platform designed to streamline business operations. Featuring integrated modules for CRM, HRM, and financial management, it provides a scalable, centralized solution that empowers multiple companies to manage their entire enterprise ecosystem from a single interface."
 //   },
 //   {
 //     id: 3,
-//     projectName: "EcoFlow",
+//     projectName: "Event Forge",
 //     year: "2024",
-//     industry: "Energy",
-//     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800&h=600',
-//     description: "EcoFlow focuses on sustainable energy solutions, helping users track and optimize their power consumption. Our design goal was to make energy data accessible and actionable, encouraging users to make environmentally conscious decisions effortlessly."
+//     industry: "Event Management",
+//     image: '/Image/Projects/eventForge.webp',
+//     description: "Event Forge is an all-in-one event management software designed to handle the complexities of modern event operations. From planning and logistics to execution and attendee management, it provides every tool necessary to deliver seamless, high-impact events with precision and ease."
 //   }
 // ];
 
@@ -34,24 +36,37 @@
 //   { label: "Industry Verticals", value: "5+" }
 // ];
 
+// const logos = [
+//   { name: "Divetoai", path: "/Image/Logo/Divetoai.svg" },
+//   { name: "Hearingaide", path: "/Image/Logo/Hearingaide.svg" },
+//   { name: "IPT Smart", path: "/Image/Logo/IPT Smart.svg" },
+//   { name: "Maxtron", path: "/Image/Logo/Maxtron.svg" },
+//   { name: "Mediture", path: "/Image/Logo/Mediture.svg" },
+//   { name: "Suryakiran", path: "/Image/Logo/Suryakiran.svg" },
+//   { name: "Yacht Hub", path: "/Image/Logo/Yacht Hub.svg" },
+//   { name: "Zyvest Logo", path: "/Image/Logo/Zyvest Logo Dark (1) 2.svg" },
+//   { name: "Day Off", path: "/Image/Logo/day off 2.svg" },
+//   { name: "Drydocks", path: "/Image/Logo/drydocks 2.svg" },
+// ];
+
 // const trustedData = [
 //   {
 //     id: 1,
-//     quote: '"Working with this team has truly pushed our company to improve. Their tailored solutions have made a significant difference in our operations!"',
-//     name: "Jake Harrison",
-//     avatar: "https://i.pravatar.cc/150?u=jake1"
+//     quote: '"ThinkForge transformed our traditional business into a digital powerhouse. Their ERP solution is exactly what we needed to scale across Kerala."',
+//     name: "Rahul Krishnan",
+//     avatar: "/Image/People/People1.webp"
 //   },
 //   {
 //     id: 2,
-//     quote: '"The attention to detail and creative vision ThinkForge brings to the table is unmatched. They transformed our brand identity completely."',
-//     name: "Sarah Chen",
-//     avatar: "https://i.pravatar.cc/150?u=sarah"
+//     quote: '"The Salmara project was handled with exceptional care. Their integration with Shopify for our Ayurveda products was flawless and truly reflects our heritage."',
+//     name: "Anjali Nair",
+//     avatar: "/Image/People/People3.webp"
 //   },
 //   {
 //     id: 3,
-//     quote: '"Efficient, professional, and incredibly creative. They delivered exactly what we needed, ahead of schedule and beyond expectations."',
-//     name: "Michael Scott",
-//     avatar: "https://i.pravatar.cc/150?u=michael"
+//     quote: '"Event Forge has simplified our entire operation. From managing local temple festivals to high-end weddings, it\'s the most reliable software we\'ve used."',
+//     name: "Adarsh Vijayan",
+//     avatar: "/Image/People/People2.webp"
 //   }
 // ];
 
@@ -61,14 +76,14 @@
 //       {/* Background elements */}
 
 //       <div className="relative z-10 max-w-7xl mx-auto">
-//         <div className="text-center mb-16">
-//           <h1 className="text-3xl sm:text-4xl md:text-5xl font-cal-sans text-white mb-4">
+//         <div className="text-center mb-8">
+//           <h1 className="text-3xl sm:text-4xl md:text-5xl font-cal-sans text-white">
 //             Our <span className="text-red-500">Work</span>
 //           </h1>
 //         </div>
 
 //         {/* Project Cards Grid */}
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
 //           {workData.map((project, index) => (
 //             <div 
 //               key={project.id} 
@@ -127,7 +142,7 @@
 //         </div>
 
 //         {/* Data Stats Section */}
-//         <div className="relative mb-16">
+//         <div className="relative mb-8">
 //           <div className="absolute inset-0 bg-red-500/5 blur-[120px] rounded-full"></div>
 //           <div className="relative grid grid-cols-2 md:grid-cols-4 gap-8 py-16 border border-white/10 bg-white/5 backdrop-blur-sm rounded-[40px] px-8">
 //             {statsData.map((stat, index) => (
@@ -143,8 +158,33 @@
 //           </div>
 //         </div>
 
+//         {/* Logo Marquee Section */}
+//         <div className="relative mb-8 overflow-hidden">
+//           <div className="max-w-4xl mx-auto text-center">
+//             <p className="text-gray-500 text-sm uppercase tracking-[0.3em] font-medium">
+//               Trusted by Industry Leaders
+//             </p>
+//           </div>
+//           <div className="relative flex flex-col items-center justify-center gap-4 py-4">
+//             <Marquee className="[--duration:30s]" pauseOnHover>
+//               {logos.map((logo, idx) => (
+//                 <div key={idx} className="flex items-center justify-center px-6 md:px-8 w-[140px] md:w-[180px] h-20 md:h-24">
+//                   <img 
+//                     src={logo.path} 
+//                     alt={logo.name} 
+//                     className="max-h-full max-w-full object-contain transition-all duration-300 pointer-events-none select-none"
+//                   />
+//                 </div>
+//               ))}
+//             </Marquee>
+//             {/* Gradient overlays for smooth fade effect */}
+//             <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-black via-transparent to-transparent z-10"></div>
+//             <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-black via-transparent to-transparent z-10"></div>
+//           </div>
+//         </div>
+
 //         {/* Trusted Section Hero */}
-//         <div className="relative rounded-[40px] overflow-hidden mb-16 shadow-2xl group">
+//         <div className="relative rounded-[40px] overflow-hidden mb-8 shadow-2xl group">
 //           <div className="h-[550px] md:h-[550px] w-full relative">
 //             <img 
 //               src="/Image/work-related.webp" 
@@ -163,9 +203,12 @@
 //               {/* Ratings Badge */}
 //               <div className="absolute bottom-10 right-10 flex items-center gap-4 bg-white/5 backdrop-blur-xl rounded-2xl px-6 py-4 border border-white/10">
 //                 <div className="flex -space-x-2">
-//                   {[1,2,3,4].map(i => (
-//                     <img key={i} className="w-10 h-10 rounded-full border-2 border-gray-900" src={`https://i.pravatar.cc/100?u=user${i}`} alt="Avatar" />
+//                   {['People1.webp', 'People2.webp', 'People3.webp'].map((img, i) => (
+//                     <img key={i} className="w-10 h-10 rounded-full border-2 border-gray-900 object-cover" src={`/Image/People/${img}`} alt="Avatar" />
 //                   ))}
+//                   <div className="w-10 h-10 rounded-full border-2 border-gray-900 bg-red-500 flex items-center justify-center text-[10px] text-white font-bold">
+//                     +2k
+//                   </div>
 //                 </div>
 //                 <div>
 //                   <div className="flex items-center gap-2">

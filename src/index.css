@@ -4,6 +4,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Marquee Animations */
+@layer utilities {
+  .animate-marquee {
+    animation: marquee var(--duration, 40s) linear infinite;
+  }
+  .animate-marquee-vertical {
+    animation: marquee-vertical var(--duration, 40s) linear infinite;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap, 1rem)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap, 1rem)));
+  }
+}
+
 @font-face {
   font-family: "Cal Sans";
   src: url("/Fonts/Cal Sans SemiBold.woff2") format("woff2");
@@ -45,3 +73,4 @@ body {
     linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 1px, transparent 1px);
   background-size: 60px 60px;
 }
+
