@@ -29,7 +29,6 @@ const teamMembers = [
 
 const logos = [
   { name: "AAL Solutions", src: "/Image/Logo/AAL_Solutions.png" },
-  { name: "Ammayi", src: "/Image/Logo/Ammayi.webp" },
   { name: "Architect Interior", src: "/Image/Logo/Architect_interior.webp" },
   { name: "Bareera", src: "/Image/Logo/Bareera.png" },
   { name: "Chill Master", src: "/Image/Logo/Chill_Master.png" },
@@ -63,25 +62,25 @@ const LogoImage = ({ logo }) => {
   const [isLoaded, setIsLoaded] = React.useState(false);
 
   return (
-    <div className="relative group flex items-center justify-center p-6 sm:p-8 md:p-10 transition-all duration-300 hover:bg-red-50/30 overflow-hidden">
+    <div className="relative group flex items-center justify-center p-6 bg-white/40 backdrop-blur-xl border border-white/30 rounded-2xl shadow-lg shadow-black/5 hover:shadow-2xl hover:bg-white/60 hover:scale-[1.02] transition-all duration-500 overflow-hidden">
       {/* Skeleton / Shimmer Effect */}
       {!isLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-50/50">
-          <div className="w-2/3 h-8 bg-gray-200 rounded-lg animate-pulse" />
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-50/20">
+          <div className="w-2/3 h-8 bg-gray-200/50 rounded-lg animate-pulse" />
         </div>
       )}
 
       <motion.img
-        initial={{ opacity: 0, scale: 0.95 }}
+        initial={{ opacity: 0, scale: 0.9 }}
         animate={{ 
           opacity: isLoaded ? 1 : 0, 
-          scale: isLoaded ? 1 : 0.95 
+          scale: isLoaded ? 1 : 0.9 
         }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         src={logo.src}
         alt={logo.name}
         onLoad={() => setIsLoaded(true)}
-        className="max-h-12 md:max-h-14 lg:max-h-16 w-auto object-contain transition-all duration-300 group-hover:scale-110 filter brightness-100 hover:brightness-110"
+        className="max-h-12 md:max-h-14 lg:max-h-16 w-auto object-contain transition-all duration-500 group-hover:scale-110"
         loading="lazy"
         decoding="async"
       />
@@ -157,7 +156,7 @@ export default function Team() {
             Trusted by <span className="text-red-500">Industry Leaders</span>
           </h2>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 max-w-7xl mx-auto bg-white overflow-hidden rounded-3xl border-2 border-gray-200 shadow-sm">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 max-w-7xl mx-auto">
             {logos.map((logo, index) => (
               <LogoImage key={index} logo={logo} />
             ))}
@@ -166,7 +165,7 @@ export default function Team() {
             <HashLink 
               smooth
               to="/connect#connect"
-              className="group flex flex-col items-center justify-center p-6 sm:p-8 md:p-10 bg-red-50/10 hover:bg-red-500 hover:text-white transition-all duration-500 text-center"
+              className="group flex flex-col items-center justify-center p-6 bg-white/40 backdrop-blur-xl border border-white/30 rounded-2xl shadow-lg shadow-black/5 hover:shadow-2xl hover:bg-red-500 hover:text-white transition-all duration-500 text-center"
             >
               <h3 className="text-sm sm:text-base font-cal-sans text-gray-800 group-hover:text-white transition-colors">
                 Think You <br /> <span className="text-red-500 group-hover:text-white">Belong Here?</span>
