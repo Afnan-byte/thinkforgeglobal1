@@ -59,7 +59,7 @@ export default function Footer() {
     { name: "About", url: "#about" },
     { name: "Services", url: "#services" },
     { name: "Clients", url: "#clients" },
-    { name: "Contact", url: "#contact" },
+    { name: "Contact", url: "/connect#connect" },
   ];
 
   return (
