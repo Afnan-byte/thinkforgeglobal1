@@ -1,7 +1,7 @@
 import React from "react";
 import { FaLinkedinIn } from "react-icons/fa6";
-// import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { motion } from "framer-motion";
 
 
 const teamMembers = [
@@ -29,8 +29,8 @@ const teamMembers = [
 
 const logos = [
   { name: "AAL Solutions", src: "/Image/Logo/AAL_Solutions.png" },
-  { name: "Ammayi", src: "/Image/Logo/Ammayi.png" },
-  { name: "Architect Interior", src: "/Image/Logo/Architect_interior.png" },
+  { name: "Ammayi", src: "/Image/Logo/Ammayi.webp" },
+  { name: "Architect Interior", src: "/Image/Logo/Architect_interior.webp" },
   { name: "Bareera", src: "/Image/Logo/Bareera.png" },
   { name: "Chill Master", src: "/Image/Logo/Chill_Master.png" },
   { name: "Cloud Cakes", src: "/Image/Logo/Cloud_cakes.png" },
@@ -51,13 +51,43 @@ const logos = [
   { name: "Scaleup Dubai", src: "/Image/Logo/Scaleup%20dubai.png" },
   { name: "Suryakiran", src: "/Image/Logo/Suryakiran.png" },
   { name: "Techbot", src: "/Image/Logo/TECHBOT_2_LOGO.jpg-removebg-preview.png" },
-  { name: "WFSK", src: "/Image/Logo/Wfsk.png" },
+  { name: "WFSK", src: "/Image/Logo/Wfsk.webp" },
   { name: "Yacht Hub", src: "/Image/Logo/Yacht%20Hub.png" },
   { name: "Zyvest", src: "/Image/Logo/Zyvest.png" },
   { name: "Gnom", src: "/Image/Logo/Gnom.png" },
   { name: "Day Off", src: "/Image/Logo/dayOff.png" },
     { name: "Salmara", src: "/Image/Logo/salamara_icon.jpg" },
 ];
+
+const LogoImage = ({ logo }) => {
+  const [isLoaded, setIsLoaded] = React.useState(false);
+
+  return (
+    <div className="relative group flex items-center justify-center p-6 sm:p-8 md:p-10 transition-all duration-300 hover:bg-red-50/30 overflow-hidden">
+      {/* Skeleton / Shimmer Effect */}
+      {!isLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-50/50">
+          <div className="w-2/3 h-8 bg-gray-200 rounded-lg animate-pulse" />
+        </div>
+      )}
+
+      <motion.img
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ 
+          opacity: isLoaded ? 1 : 0, 
+          scale: isLoaded ? 1 : 0.95 
+        }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        src={logo.src}
+        alt={logo.name}
+        onLoad={() => setIsLoaded(true)}
+        className="max-h-12 md:max-h-14 lg:max-h-16 w-auto object-contain transition-all duration-300 group-hover:scale-110 filter brightness-100 hover:brightness-110"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  );
+};
 
 export default function Team() {
   return (
@@ -129,17 +159,7 @@ export default function Team() {
           
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 max-w-7xl mx-auto bg-white overflow-hidden rounded-3xl border-2 border-gray-200 shadow-sm">
             {logos.map((logo, index) => (
-              <div 
-                key={index} 
-                className="group flex items-center justify-center p-6 sm:p-8 md:p-10 transition-all duration-300 hover:bg-red-50/30"
-              >
-                <img
-                  src={logo.src}
-                  alt={logo.name}
-                  className="max-h-12 md:max-h-14 lg:max-h-16 w-auto object-contain transition-all duration-300 group-hover:scale-110 filter brightness-100 hover:brightness-110"
-                  loading="lazy"
-                />
-              </div>
+              <LogoImage key={index} logo={logo} />
             ))}
 
             {/* Creative CTA Slot to fill the grid (29 logos + 1 CTA = 30 slots / 5 cols = 6 full rows) */}
