@@ -56,6 +56,7 @@ const logos = [
   { name: "Gnom", src: "/Image/Logo/Gnom.webp" },
   { name: "Day Off", src: "/Image/Logo/dayOff.webp" },
   { name: "Salmara", src: "/Image/Logo/salamara_icon.webp" },
+  {name:"scale Up India", src: "/Image/Logo/scale_india.webp"}
 ];
 
 const LogoImage = ({ logo, index }) => {
