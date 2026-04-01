@@ -28,63 +28,57 @@ const teamMembers = [
 
 
 const logos = [
-  { name: "AAL Solutions", src: "/Image/Logo/AAL_Solutions.png" },
+  { name: "AAL Solutions", src: "/Image/Logo/AAL_Solutions.webp" },
   { name: "Architect Interior", src: "/Image/Logo/Architect_interior.webp" },
-  { name: "Bareera", src: "/Image/Logo/Bareera.png" },
-  { name: "Chill Master", src: "/Image/Logo/Chill_Master.png" },
-  { name: "Cloud Cakes", src: "/Image/Logo/Cloud_cakes.png" },
-  { name: "Depro", src: "/Image/Logo/Depro.png" },
-  { name: "Divetoai", src: "/Image/Logo/Divetoai.png" },
-  { name: "Eminent", src: "/Image/Logo/Eminent.png" },
-  { name: "Family Lounge", src: "/Image/Logo/Family_Lounge.png" },
-  { name: "Form Field", src: "/Image/Logo/Form_Field.png" },
-  { name: "Frootcane", src: "/Image/Logo/Frootcane.png" },
-  { name: "Hearingaide", src: "/Image/Logo/Hearingaide.png" },
-  { name: "Imara", src: "/Image/Logo/Imara.png" },
-  { name: "KPH", src: "/Image/Logo/KPH.png" },
-  { name: "Maxtron", src: "/Image/Logo/Maxtron.png" },
-  { name: "Mediture", src: "/Image/Logo/Mediture.png" },
-  { name: "Niyaan", src: "/Image/Logo/Niyaan.png" },
-  { name: "Oruva", src: "/Image/Logo/Oruva.png" },
-  { name: "Realcut", src: "/Image/Logo/Realcut.png" },
-  { name: "Scaleup Dubai", src: "/Image/Logo/Scaleup%20dubai.png" },
-  { name: "Suryakiran", src: "/Image/Logo/Suryakiran.png" },
-  { name: "Techbot", src: "/Image/Logo/TECHBOT_2_LOGO.jpg-removebg-preview.png" },
+  { name: "Bareera", src: "/Image/Logo/Bareera.webp" },
+  { name: "Chill Master", src: "/Image/Logo/Chill_Master.webp" },
+  { name: "Cloud Cakes", src: "/Image/Logo/Cloud_cakes.webp" },
+  { name: "Depro", src: "/Image/Logo/Depro.webp" },
+  { name: "Divetoai", src: "/Image/Logo/Divetoai.webp" },
+  { name: "Eminent", src: "/Image/Logo/Eminent.webp" },
+  { name: "Family Lounge", src: "/Image/Logo/Family_Lounge.webp" },
+  { name: "Form Field", src: "/Image/Logo/Form_Field.webp" },
+  { name: "Frootcane", src: "/Image/Logo/Frootcane.webp" },
+  { name: "Hearingaide", src: "/Image/Logo/Hearingaide.webp" },
+  { name: "Imara", src: "/Image/Logo/Imara.webp" },
+  { name: "KPH", src: "/Image/Logo/KPH.webp" },
+  { name: "Maxtron", src: "/Image/Logo/Maxtron.webp" },
+  { name: "Mediture", src: "/Image/Logo/Mediture.webp" },
+  { name: "Niyaan", src: "/Image/Logo/Niyaan.webp" },
+  { name: "Oruva", src: "/Image/Logo/Oruva.webp" },
+  { name: "Realcut", src: "/Image/Logo/Realcut.webp" },
+  { name: "Scaleup Dubai", src: "/Image/Logo/Scaleup%20dubai.webp" },
+  { name: "Suryakiran", src: "/Image/Logo/Suryakiran.webp" },
+  { name: "Techbot", src: "/Image/Logo/TECHBOT_2_LOGO.jpg-removebg-preview.webp" },
   { name: "WFSK", src: "/Image/Logo/Wfsk.webp" },
-  { name: "Yacht Hub", src: "/Image/Logo/Yacht%20Hub.png" },
-  { name: "Zyvest", src: "/Image/Logo/Zyvest.png" },
-  { name: "Gnom", src: "/Image/Logo/Gnom.png" },
-  { name: "Day Off", src: "/Image/Logo/dayOff.png" },
-    { name: "Salmara", src: "/Image/Logo/salamara_icon.jpg" },
+  { name: "Yacht Hub", src: "/Image/Logo/Yacht%20Hub.webp" },
+  { name: "Zyvest", src: "/Image/Logo/Zyvest.webp" },
+  { name: "Gnom", src: "/Image/Logo/Gnom.webp" },
+  { name: "Day Off", src: "/Image/Logo/dayOff.webp" },
+  { name: "Salmara", src: "/Image/Logo/salamara_icon.webp" },
 ];
 
-const LogoImage = ({ logo }) => {
-  const [isLoaded, setIsLoaded] = React.useState(false);
-
+const LogoImage = ({ logo, index }) => {
   return (
-    <div className="relative group flex items-center justify-center p-6 bg-white/40 backdrop-blur-xl border border-white/30 rounded-2xl shadow-lg shadow-black/5 hover:shadow-2xl hover:bg-white/60 hover:scale-[1.02] transition-all duration-500 overflow-hidden">
-      {/* Skeleton / Shimmer Effect */}
-      {!isLoaded && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-50/20">
-          <div className="w-2/3 h-8 bg-gray-200/50 rounded-lg animate-pulse" />
-        </div>
-      )}
-
-      <motion.img
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ 
-          opacity: isLoaded ? 1 : 0, 
-          scale: isLoaded ? 1 : 0.9 
-        }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ 
+        duration: 0.5, 
+        delay: (index % 10) * 0.05, 
+        ease: "easeOut" 
+      }}
+      className="relative group flex items-center justify-center p-6 bg-white/40 backdrop-blur-xl border border-white/30 rounded-2xl shadow-lg shadow-black/5 hover:shadow-2xl hover:bg-white/60 hover:scale-[1.02] transition-all duration-500 overflow-hidden"
+    >
+      <img
         src={logo.src}
         alt={logo.name}
-        onLoad={() => setIsLoaded(true)}
         className="max-h-12 md:max-h-14 lg:max-h-16 w-auto object-contain transition-all duration-500 group-hover:scale-110"
-        loading="lazy"
+        loading={index < 10 ? "eager" : "lazy"}
         decoding="async"
       />
-    </div>
+    </motion.div>
   );
 };
 
@@ -158,7 +152,7 @@ export default function Team() {
           
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 max-w-7xl mx-auto">
             {logos.map((logo, index) => (
-              <LogoImage key={index} logo={logo} />
+              <LogoImage key={index} logo={logo} index={index} />
             ))}
 
             {/* Creative CTA Slot to fill the grid (29 logos + 1 CTA = 30 slots / 5 cols = 6 full rows) */}
